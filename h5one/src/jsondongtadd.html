@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!--360 browser -->
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="wos">
+    <!--<meta http-equiv="Access-Control-Allow-Origin" content="http://39.108.233.120:8080/android/doAppLogin" />-->
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/i/app.png">
+    <!--Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="images/i/app.png">
+    <!--Win8 or 10 -->
+    <meta name="msapplication-TileImage" content="images/i/app.png">
+    <meta name="msapplication-TileColor" content="#e1652f">
+
+    <link rel="icon" type="image/png" href="images/i/favicon.png">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="css/public.css">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.form.min.js"></script>
+    <!--<![endif]-->
+    <!--[if lte IE 8 ]>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+    <![endif]-->
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="js/public.js"></script>
+    <style>
+        .myfitclass{
+            color: #ff0000;
+        }
+        .footer_fixed{background:#fff;width:100%; border-top:1px solid #e6e6e6;position:fixed; left:0; bottom:0; z-index:99; height:70px; overflow:hidden;}
+        .footer_fixed span{width:20%; float:left;text-align:center;display:block;}
+        .footer_fixed span:first-child{width:17%;}
+        .footer_fixed span:last-child{width:17%;}
+    </style>
+</head>
+<body>
+<div style="text-decoration: none">
+    <h1 id="firsttest" data-action="shou"  align="center" style="color: #ff0000">我的第一条</h1>
+    <p id="firstp" align="center">我的第一条</p>
+</div>
+<script>
+//    text() - 设置或返回所选元素的文本内容
+//    html() - 设置或返回所选元素的内容（包括 HTML 标记）
+//    val() - 设置或返回表单字段的值
+//$(document).ready(function(){
+//    $("#btn1").click(function(){
+//        $("#test1").text("Hello world!");
+//    });
+//    $("#btn2").click(function(){
+//        $("#test2").html("<b>Hello world!</b>");
+//    });
+//    $("#btn3").click(function(){
+//        $("#test3").val("RUNOOB");
+//    });
+//});
+//function appendText(){
+//    var txt1="<p>文本。</p>";              // 使用 HTML 标签创建文本
+//    var txt2=$("<p></p>").text("文本。");  // 使用 jQuery 创建文本
+//    var txt3=document.createElement("p");
+//    txt3.innerHTML="文本。";               // 使用 DOM 创建文本 text with DOM
+//    $("body").append(txt1,txt2,txt3);        // 追加新元素
+//}
+    $("#firsttest").click(function(){
+       var nameid = $("#firsttest").attr("id");
+       alert(nameid)
+        if($("#firstp").is(":hidden")){
+            $("#firstp").show()
+        }else {
+            $("#firstp").hide()
+        }
+
+    });
+    //    $("#firsttest").click(function(){//自动开关
+    //        $("#firsttest").toggle();
+    //    });
+</script>
+
+<script>
+    //jqu 样式返回 CSS 属性
+    //如需返回指定的 CSS 属性的值，请使用如下语法：
+    //css("propertyname");
+    //设置 CSS 属性
+   // 如需设置指定的 CSS 属性，请使用如下语法：
+    //css("propertyname","value");
+    //
+    function dtadd() {
+        var myimg = document.createElement("a");//创建节点还是用document  添加用jquery
+        //myimg.src = "http://pic49.nipic.com/file/20140927/19617624_230415502002_2.jpg";
+        myimg.href = "http://pic49.nipic.com/file/20140927/19617624_230415502002_2.jpg"
+        myimg.text = " haha ";
+       // myimg.color = " "
+        myimg.setAttribute("class","myfitclass");
+        //var txt2=$("<p></p>").text("文本。");  // 使用 jQuery 创建文本;
+        $("#content").append(myimg);
+        $("#content").html($("#content").html()+"<br></br>");
+       // alert(myimg.getAttribute("class"))
+    }
+</script>
+
+<div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+    <ul class="am-slides">
+        <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+        <li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
+    </ul>
+</div>
+<div id="content">
+    <button onclick="dtadd()">jajajja</button>
+</div>
+<div class="am-btn-toolbar">
+    <button type="button" class="am-btn am-btn-primary js-demo-slider-btn" data-action="add">添加 slide</button>
+    <button type="button" class="am-btn am-btn-danger js-demo-slider-btn" data-action="remove">移除 slide</button>
+</div>
+<script>
+    $(function() {
+        var $slider = $('#demo-slider-0');
+        var counter = 0;
+        var getSlide = function() {
+            counter++;
+            return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+                (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+                '</li>';
+        };
+
+        $('.js-demo-slider-btn').on('click', function() {
+            var action = this.getAttribute('data-action');
+            if (action === 'add') {
+                $slider.flexslider('addSlide', getSlide());
+            } else {
+                var count = $slider.flexslider('count');
+                count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+            }
+        });
+
+    });
+</script>
+<footer class="footer_fixed" style="background: #fff;position:fixed; left:0; bottom:0;width: 100%">
+    <span><a href="index.html" class="aon"><i class="home_icon"></i><b>首页</b></a></span>
+    <span><a href="customer.html"><i class="customer_icon"></i><b>微客服</b></a></span>
+    <span><a href="store.html"><i class="store_icon"></i><b>店铺介绍</b></a></span>
+    <span><a href="carts.html"><i class="carts_icon"></i><b>购物车</b></a></span>
+    <span><a href="member.html"><i class="member_icon"></i><b>我的</b></a></span>
+</footer>
+
+</body>
+</html>

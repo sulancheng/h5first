@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>Lenovo_Market</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setInterval(function(){
+                var i=$(".swiper-slide-active").index();
+                $(".containerinner:eq("+i+")").show().siblings().hide();
+            },500);
+        });
+    </script>
+    <style type="text/css">
+        body{background-color: #fff;}
+        /* fullc */
+        .fullc img{width: 100%;}
+        /* swiper */
+        .swiper-container {width: 100%;}
+        .swiper-slide {text-align: center;display: flex;justify-content: center;align-items: center;}
+        .swiper-slide img{width: 100%;height: auto;}
+        /* */
+        .container{width: 100%;}
+        .containerinner{width:100%;display:none;}
+        .ctitle{width:94%;height:50px;border-bottom: 1px solid #ccc;line-height: 50px;font-size: 180%;margin-left: 3%;}
+        .cmiddle{width:100%;}
+        .cmiddle img{width:30%;height:auto;margin: 10px 35%;}
+        .cinfo{width:80%;margin-left: 10%;font-size: 120%;line-height: 24px;}
+    </style>
+</head>
+<body>
+<input type="hidden" id="hid_num" value="0">
+<!-- Swiper -->
+<div class="swiper-container swiper-container-horizontal">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-3866px, 0px, 0px);">
+        <div class="swiper-slide" style="width: 1903px; margin-right: 30px;"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW02_Plus_top.png"></div>
+        <div class="swiper-slide swiper-slide-prev" style="width: 1903px; margin-right: 30px;"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW02_top.png"></div>
+        <div class="swiper-slide swiper-slide-active" style="width: 1903px; margin-right: 30px;"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW01_Plus_top.png"></div>
+        <div class="swiper-slide swiper-slide-next" style="width: 1903px; margin-right: 30px;"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW01_Pro_top.png"></div>
+        <div class="swiper-slide" style="width: 1903px; margin-right: 30px;"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW01_top.png"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-clickable" style="text-align: right;width:97%;"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+</div>
+<!-- 容器 -->
+<div class="container">
+    <div class="containerinner" style="display: none;">
+        <div class="ctitle">HW02 Plus</div>
+        <div class="cmiddle"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW02_Plus.png"></div>
+        <div class="cinfo">
+            <span><b>•</b> Nordic52832 with BT4.2 BLE</span><br>
+            <span><b>•</b> 0.42” Blue OLED HQ Screen</span><br>
+            <span><b>•</b> Support Android4.4+ or iOS 8.0+</span><br>
+            <span><b>•</b> PAI (Personal Activity Intelligence)</span><br>
+            <span><b>•</b> 24hrs Heart Rate Tracking</span><br>
+            <span><b>•</b> High-End Double Color Design</span><br>
+            <span><b>•</b> Premium Metallic Brand Buckle</span><br>
+        </div>
+    </div>
+    <div class="containerinner" style="display: none;">
+        <div class="ctitle">HW02</div>
+        <div class="cmiddle"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW02.png"></div>
+        <div class="cinfo">
+            <span><b>•</b> Nordic52832 with BT4.2 BLE</span><br>
+            <span><b>•</b> 0.42” Blue OLED HQ Screen</span><br>
+            <span><b>•</b> Support Android4.4+ or iOS 8.0+</span><br>
+            <span><b>•</b> 24hrs Heart Rate Tracking</span><br>
+            <span><b>•</b> High-End Double Color Design</span><br>
+            <span><b>•</b> Hidden Display Screen</span><br>
+            <span><b>•</b> Soft and Durable TPU Strap</span><br>
+            <span><b>•</b> Premium Metallic Brand Buckle</span><br>
+        </div>
+    </div>
+    <div class="containerinner" style="display: block;">
+        <div class="ctitle">HW01 Plus</div>
+        <div class="cmiddle"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW01_Plus.png"></div>
+        <div class="cinfo">
+            <span><b>•</b> Nordic52832 with BT4.2 BLE</span><br>
+            <span><b>•</b> 0.87” OLED HQ Screen</span><br>
+            <span><b>•</b> Support Android4.4+ or iOS 8.0+</span><br>
+            <span><b>•</b> PAI (Personal Activity Intelligence)</span><br>
+            <span><b>•</b> 24hrs Heart Rate Tracking</span><br>
+            <span><b>•</b> Detachable TPU Strap Design</span><br>
+            <span><b>•</b> Convenient USB Direct Plug</span><br>
+            <span><b>•</b> Scratch Proof IML Display</span><br>
+        </div>
+    </div>
+    <div class="containerinner" style="display: none;">
+        <div class="ctitle">HW01 Pro</div>
+        <div class="cmiddle"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW01_Pro.png"></div>
+        <div class="cinfo">
+            <span><b>•</b> Nordic52832 with BT4.2 BLE</span><br>
+            <span><b>•</b> 0.87” OLED HQ Screen</span><br>
+            <span><b>•</b> Support Android4.4+ or iOS 8.0+</span><br>
+            <span><b>•</b> 24hrs HeartRate monitor</span><br>
+            <span><b>•</b> Detachable TPU Strap Design</span><br>
+            <span><b>•</b> Convenient USB Direct Plug</span><br>
+            <span><b>•</b> Scratch Proof IML Display</span><br>
+        </div>
+    </div>
+    <div class="containerinner" style="display: none;">
+        <div class="ctitle">HW01</div>
+        <div class="cmiddle"><img src="http://www.hchlnet.com/portrait/LenovoMarket/img/HW01.png"></div>
+        <div class="cinfo">
+            <span><b>•</b> Nordic52832 with BT4.2 BLE</span><br>
+            <span><b>•</b> 0.91” OLED HQ Screen</span><br>
+            <span><b>•</b> Support Android4.4+ or iOS 8.0+</span><br>
+            <span><b>•</b> 24hrs HeartRate monitor</span><br>
+            <span><b>•</b> Sport &amp; Auto Sleep Detection</span><br>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="js/swiper-3.4.2.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+    });
+</script>
+
+
+</body>
+</html>

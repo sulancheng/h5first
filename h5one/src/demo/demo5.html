@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>demo5-实现局部刷新.html</title>
+
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        #mytwo{
+            color: #5eb95e;
+        }
+    </style>
+    <script>
+        var flag = false;
+//        document.getElementById("EleId").style.visibility="hidden";
+//        document.getElementById("EleId").style.visibility="visible";
+        //设置节点id
+
+//        lswt_2.id='lswtColse';
+//
+//        //设置节点属性
+//
+//        lswt_2.style.width='11px';
+//        lswt_2.style.height='10px';
+//        lswt_2.style.top='0px';
+//        lswt_2.style.right='0px';
+//        lswt_2.style.position='absolute';
+//        lswt_2.style.background='url(7.gif)';
+//        lswt_2.style.backgroundRepeat='no-repeat';
+//        //为这个节点添加点击时间
+//        lswt_4.addEventListener("click",loc,false);
+        function myhidden() {
+            var trcopy = document.getElementById("trcopy");
+            var textlie = document.getElementById("textlie");
+            if (flag) {
+                //trcopy.style.visibility="visible";
+                trcopy.style.display = "";//可以达到效果，用block，inline  会用问题
+                flag = false;
+            } else {
+                trcopy.style.display = "none";
+//                trcopy.style.visibility="hidden";
+                flag = true;
+            }
+
+            var two = document.createElement("h2");
+            two.setAttribute("id","mytwo");
+            var conttwo = "我第一次写";
+            two.innerHTML = conttwo;
+            alert("添加");
+            textlie.appendChild(two);
+        }
+    </script>
+    <!-- 用到json。xmlhtttpreq要记得屏蔽兼容性 -->
+    <script type="text/javascript">
+        function findUser() {
+            alert("打印");
+            document.getElementById("tableId").innerHTML = '<tr align="center" id="trcopy"><td>姓名</td><td>年龄</td><td>座右铭</td><td>性别</td><td>联系方式</td></tr>';
+            var text = '{ "sites" : [' +
+                '{ "name":"Runoob" , "url":"www.runoob.com" },' +
+                '{ "name":"Google" , "url":"www.google.com" },' +
+                '{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+            var data = '[' +
+                '{"age":19,"contact":"guofan@baihe.com","desc":"我是弯的我怕谁","sex":"弯","username":"郭凡"},' +
+                '{"age":19,"contact":"zhanglingzhuo@baihe.com","desc":"不要钱，不要帅，想找帅哥谈恋爱","sex":"女","username":"张领卓"},' +
+                ' {"age":19,"contact":"luodong@baihe.com","desc":"本地阳光男孩，22，真的想找个结婚的","sex":"男","username":"罗冬"}' + ']';
+
+
+//            [{"age":19,"contact":"guofan@baihe.com","desc":"我是弯的我怕谁","sex":"弯","username":"郭凡"},
+//            {"age":19,"contact":"zhanglingzhuo@baihe.com","desc":"不要钱，不要帅，想找帅哥谈恋爱","sex":"女","username":"张领卓"},
+//            {"age":19,"contact":"luodong@baihe.com","desc":"本地阳光男孩，22，真的想找个结婚的","sex":"男","username":"罗冬"}];
+            var json = eval("(" + data + ")");
+            alert(json[0]);
+            for (var i = 0; i < json.length; i++) {
+                var tr = document.createElement("tr");
+                tr.setAttribute("align", "center");
+                var td = "<td>" + json[i].username + "</td>";
+                td += "<td>" + json[i].age + "</td>";
+                td += "<td>" + json[i].desc + "</td>";
+                td += "<td>" + json[i].sex + "</td>";
+                td += "<td>" + json[i].contact + "</td>";
+                tr.innerHTML = td;
+                document.getElementById("tableId").appendChild(tr);
+            }
+            var copy = $("#trcopy").clone(false);//不会复制事件，只会复制元素。
+            document.getElementById("tableId").appendChild(copy);
+
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+<input type="button" value="查询" onclick="findUser()">
+<br><br><br>
+<button onclick="myhidden()">异常</button>
+<table border="1" bordercolor="blue" width="500" cellspacing="0" id="tableId">
+
+
+</table>
+
+<div id="textlie">
+    <h1 id="textone">我第一次写</h1>
+</div>
+
+</body>
+</html>
