@@ -106,10 +106,9 @@ The code is available under the [MIT license](LICENSE.txt).
     
     jQuery  :
     语法
-    $(selector).bind(event,data,function,map)
-    $("p").bind("click",function(){
-        alert("这个段落被点击了。");
-    });
+  $("p").click(function(){
+      alert("段落被点击了。");
+  });
  2.基本点击事件：
  <script>
  function changetext(id)
