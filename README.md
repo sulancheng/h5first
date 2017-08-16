@@ -160,9 +160,19 @@ document.getElementById("demo").innerHTML=Date();
 <p id="demo"></p>
 </body>
 2.关于横向布局 ：
-(1)我们对div设置一个float浮动属性即可解决不并排显示，只要你的并排div盒子总宽度小于或等于最外层盒子宽度即可实现多个div对象并排显示。float:left
+(1)我们对div设置一个float浮动属性即可解决不并排显示，只要你的并排div盒子总宽度小于或等于最外层盒子宽度即可实现多个div对象并排显示。float:left  会随着屏幕宽度高度的变化 实现排版的变化。
 (2).我们加入display:inline即可解决实现同行并排显示div盒子对象。
     未设置display样式效果截图：display: inline
+    
+    block元素的特点是：  块 有自动换行 <h> <p> <div>
+    　　总是在新行上开始；
+    　inline元素的特点是：  内联  排一排。 
+    　　和其他元素都在一行上；
+ （3）position:static  标签默认的就是这个   position:fixed 定位，窗口滚动它也不滚动
+ position:relative 相对定位元素的定位是相对其正常位置
+ position: absolute 定位
+      绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>:
+
 3.关于大量的数据提交 可以考虑表单提交： 也可以FormData对象是html5的一个对象。
 4.关于节点的操作：
 <div id="test">
@@ -198,6 +208,109 @@ if(elem_child[i].nodeName == "#text" && !/\s/.test(elem_child.nodeValue))
 }
 }
 </script>
+
+
+对于json的解析：
+不建议使用eval（）函数，因为eval（）接受任意的字符串，并当作JavaScript代码来处理,这个机制已经有安全隐患了
+var str='{ "name": "John" }';
+var obj = eval  ('(' + str + ')');
+alert(obj.name);
+  
+$.parseJSON()和JSON.parse()函数用于将格式完好的JSON字符串转为与之对应的JavaScript对象。所谓"格式完好"，就是要求指定的字符串必须符合严格的JSON格式，
+例如：属性名称必须加双引号、字符串值也必须用双引号。其次，JSON标准不允许字符串中出现"控制字符"，正确写法应该是使用两个反斜杠，以免被JS解析器直接转义。
+  
+1、JSON字符串转换为JSON对象
+var str='{ "name": "John" ,"age": "24" }';
+var obj = $.parseJSON(str);
+alert(obj.name);  //John
+  
+var str = '{ "name": "John", "age": "24" }';
+var obj = JSON.parse(str);
+alert(obj.name);  //John
+  
+2、将JSON对象转换为字符串
+var obj={name: "John", age: "24"};
+var last=JSON.stringify(obj);
+alert(last);  //'{name: "John", age: "24"}'
+  
+var obj={name: "John", age: "24"};
+var last=obj.toJSONString();
+alert(last);  //'{name: "John", age: "24"}'
+  
+3、解析读取json对象
+var str={
+  "result":{
+    "age":"33",
+    "id":"2server",
+    "name":"mady"
+  }
+};
+alert(str.result.age);  //33
+  
+var result = $.parseJSON( '[ 1, true, "CodePlayer" ]' );
+alert( result[1] );  // CodePlayer
+  
+var result = $.parseJSON( "\"专注于编程开发技术分享\"" );
+alert(result);  //专注于编程开发技术分享
+
+
+4.表单提交的多种方式：
+（1）
+ <body>
+    <form action="" id="myform">
+        用户名<input type="text" name="username"/>
+        密码<input type="password" name="password"/>
+        性别<input type="radio" name="sex" value="男人">man
+           <input type="radio" name="sex" value="女人">woman
+    </form>
+
+    <a href="#" style="text-decoration: none;">使用ajax提交表单数据</a>
+  </body>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $("a").click(function(){
+                 $.ajax({    
+                    type:'post',        
+                    url:'FormServlet',    
+                    data:$("#myform").serialize(),    
+                    cache:false,    
+                    dataType:'json',    
+                    success:function(data){   
+                        alert("请求成功");
+                    }    
+                });    
+            });
+        });
+    </script>
+
+（2）
+$.ajax({
+                cache: true,
+                type: "POST",
+                url:ajaxCallUrl,
+                data:$('#yourformid').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+                    $("#commonLayout_appcreshi").parent().html(data);
+                }
+            });
+（3）使用formdata上传表单 包含 文件图片上传。
+var fd = new FormData(document.getElementById("myformid"));
+//var fd = new FormData($("#myformid"));
+fd.append("CustomField", "This is some extra data");
+$.ajax({
+  url: "stash.php",
+  type: "POST",
+  data: fd,
+  processData: false,  // 告诉jQuery不要去处理发送的数据
+  contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+   success: function(msg){
+       alert( "Data Saved: " + msg );
+    }
+});
 
 
 

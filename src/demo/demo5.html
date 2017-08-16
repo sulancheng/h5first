@@ -6,6 +6,7 @@
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
     <style type="text/css">
         #mytwo{
             color: #5eb95e;
@@ -60,6 +61,11 @@
                 '{ "name":"Runoob" , "url":"www.runoob.com" },' +
                 '{ "name":"Google" , "url":"www.google.com" },' +
                 '{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+
+            //var item = '<div class="wrap"><img width="100" height="100" src="'+json.imageUrl+'">'+json.name+'<br>'+json.content+'</div>';//
+
+            var myjqujson =  $.parseJSON(text);//第一种解析json
+            alert(myjqujson.sites[1].name);
             var data = '[' +
                 '{"age":19,"contact":"guofan@baihe.com","desc":"我是弯的我怕谁","sex":"弯","username":"郭凡"},' +
                 '{"age":19,"contact":"zhanglingzhuo@baihe.com","desc":"不要钱，不要帅，想找帅哥谈恋爱","sex":"女","username":"张领卓"},' +
@@ -69,8 +75,8 @@
 //            [{"age":19,"contact":"guofan@baihe.com","desc":"我是弯的我怕谁","sex":"弯","username":"郭凡"},
 //            {"age":19,"contact":"zhanglingzhuo@baihe.com","desc":"不要钱，不要帅，想找帅哥谈恋爱","sex":"女","username":"张领卓"},
 //            {"age":19,"contact":"luodong@baihe.com","desc":"本地阳光男孩，22，真的想找个结婚的","sex":"男","username":"罗冬"}];
-            var json = eval("(" + data + ")");
-            alert(json[0]);
+            var json = eval("(" + data + ")");//第二种解析json
+            alert(json[0].desc);
             for (var i = 0; i < json.length; i++) {
                 var tr = document.createElement("tr");
                 tr.setAttribute("align", "center");
@@ -80,10 +86,15 @@
                 td += "<td>" + json[i].sex + "</td>";
                 td += "<td>" + json[i].contact + "</td>";
                 tr.innerHTML = td;
-                document.getElementById("tableId").appendChild(tr);
+//                document.getElementById("tableId").appendChild(tr);
+                $("#tableId").append(tr)
             }
-            var copy = $("#trcopy").clone(false);//不会复制事件，只会复制元素。
-            document.getElementById("tableId").appendChild(copy);
+//            $("#tableId").after($("#trcopy").clone());//也可以 每个字
+            $("#trcopy").clone().appendTo("#tableId");//不会复制事件，只会复制元素。
+
+            var pinjietext = '<div>'+ myjqujson.sites[1].name+'</div>';//第三种种解析json    在jquery中 所有的网络请求返回的data是不适用的。
+            $(".pinjie").html(pinjietext);
+            //document.getElementById("tableId").appendChild($("#trcopy").clone());
 
         }
 
@@ -100,7 +111,9 @@
 
 
 </table>
+<div class="pinjie">
 
+</div>
 <div id="textlie">
     <h1 id="textone">我第一次写</h1>
 </div>

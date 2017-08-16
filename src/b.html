@@ -6,27 +6,30 @@
     <script src="assets/js/jquery.min.js"></script>
     <title>b页面</title>
     <script>
-        $(function () {
-            getData1();
-        });
-
-        function getData1() {
-            alert("1");
-            var name = $.query.get("name");
-            var age = $.query.get("age");
-            alert("2");
-            $("#name").text(name);
-            $("#age").text(age);
-        }
+//        $(function () {
+//            getData1();
+//        });
+//
+//        function getData1() {
+//            alert("1");
+//            var name = $.query.get("name");
+//            var age = $.query.get("age");
+//            alert("2");
+//            $("#name").text(name);
+//            $("#age").text(age);
+//        }
     </script>
     <script>
         var thisURL = document.URL;
         var  getval =thisURL.split('?')[1];
-        var showval= getval.split("=")[1];
+        var showval= getval.split("&");
         function  showvalf(){
-            alert(showval);
+            var name= showval[0].split("=")[1];
+            var age= showval[1].split("=")[1];
+            //alert(showval);
             //document.getElementById('ee').value=showval;
-            $("#name").text(showval);
+            $("#name").text(name);
+            $("#age").text(age);
         }
     </script>
 </head>

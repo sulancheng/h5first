@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="css/css_style.css">
     <script type="text/javascript" src="assets/js/zepto.js"></script>
     <style>
+        #mymybotton:active{
+            color: #ff0000;
+            background-color: #5eb95e;
+        }
 
     </style>
 </head>
@@ -42,7 +46,11 @@
     function myadd() {
         var myli = document.createElement("li");//创建节点还是用document  添加用jquery
         myli.setAttribute("data-action","007");
-        myli.setAttribute("class","myfirli");
+         //myli.setAttribute("class","myfirli");
+        $(myli).attr("class","myfirli");//也可以
+
+
+
         var mya = document.createElement("a");//创建节点还是用document  添加用jquery
         var myi = document.createElement("i");//创建节点还是用document  添加用jquery
         var myimg = document.createElement("img");//创建节点还是用document  添加用jquery
@@ -50,6 +58,7 @@
         myi.appendChild(myimg);
         var myspan = document.createElement("span");//创建节点还是用document  添加用jquery
         myspan.innerHTML = "记录卡了复康路法兰克福就爱上课";
+        $(myspan).css("color","#ff5656");
         var myb = document.createElement("b");//创建节点还是用document  添加用jquery
         myb.innerHTML="¥198.00";
         var mylabel = document.createElement("label");//创建节点还是用document  添加用jquery
@@ -60,42 +69,51 @@
         mya.appendChild(myb);
         myli.appendChild(mya);
         $(".prolist").append(myli);
-        alert($(".myfirli").attr("data-action"))
+        //alert($(".myfirli").attr("data-action"))
+
+        //鼠标停留，离开样式
+        $('#mymybotton').hover(
+            function() {
+                $(this).stop().fadeTo('slow', 0.3);
+            },
+            function() {
+                $(this).stop().fadeTo('slow', 1);
+            });
     }
 </script>
-<button onclick="myadd()">
+<button onclick="myadd()" id="mymybotton">
     添加
 </button>
 <div class="probox">
     <ul class="prolist">
-        <li >
-            <a href="a.html">
-                <i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>
-                <span>韩版冬季中长款徽章连衣裙徽章</span>
-                <b><label>月度热销500</label>¥188.00</b>
-            </a>
-        </li>
-        <li>
-            <a href="b.html">
-                <i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>
-                <span>韩版冬季中长款徽章连衣裙徽章</span>
-                <b><label>月度热销500</label>¥188.00</b>
-            </a>
-        </li>
-        <li>
-            <a href="myfirst.html">
-                <i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>
-                <span>韩版冬季中长款徽章连衣裙徽章</span>
-                <b><label>月度热销500</label>¥188.00</b>
-            </a>
-        </li>
-        <li>
-            <a href="proinfo.html">
-                <i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>
-                <span>韩版冬季中长款徽章连衣裙徽章</span>
-                <b><label>月度热销500</label>¥188.00</b>
-            </a>
-        </li>
+        <!--<li >-->
+            <!--<a href="a.html">-->
+                <!--<i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>-->
+                <!--<span>韩版冬季中长款徽章连衣裙徽章</span>-->
+                <!--<b><label>月度热销500</label>¥188.00</b>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="b.html">-->
+                <!--<i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>-->
+                <!--<span>韩版冬季中长款徽章连衣裙徽章</span>-->
+                <!--<b><label>月度热销500</label>¥188.00</b>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="myfirst.html">-->
+                <!--<i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>-->
+                <!--<span>韩版冬季中长款徽章连衣裙徽章</span>-->
+                <!--<b><label>月度热销500</label>¥188.00</b>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="proinfo.html">-->
+                <!--<i><img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"></i>-->
+                <!--<span>韩版冬季中长款徽章连衣裙徽章</span>-->
+                <!--<b><label>月度热销500</label>¥188.00</b>-->
+            <!--</a>-->
+        <!--</li>-->
     </ul>
     <div class="shelves_box clearfix">
         <span><a href="#">2016.11.6上新 </a></span>

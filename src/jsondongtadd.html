@@ -46,6 +46,43 @@
         .footer_fixed span{width:20%; float:left;text-align:center;display:block;}
         .footer_fixed span:first-child{width:17%;}
         .footer_fixed span:last-child{width:17%;}
+
+        .nav {
+            background: #009c39;
+            padding: 10px 0 6px 0;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+        .nav ul {
+            height: 0px;
+        }
+        .nav ul li {
+            float: left;
+            width: 25%;
+            text-align: center;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav ul li span {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            font-family: "微软雅黑";
+            line-height: 22px;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +134,7 @@
     //设置 CSS 属性
    // 如需设置指定的 CSS 属性，请使用如下语法：
     //css("propertyname","value");
-    //
+    // $("#oppo").children().last().css("background-color","yellow");
     function dtadd() {
         var myimg = document.createElement("a");//创建节点还是用document  添加用jquery
         //myimg.src = "http://pic49.nipic.com/file/20140927/19617624_230415502002_2.jpg";
@@ -110,6 +147,15 @@
         $("#content").html($("#content").html()+"<br></br>");
        // alert(myimg.getAttribute("class"))
     }
+
+    function fengzh(x,y) {
+        var he = cheng(x,y);
+        alert(he)
+
+    }
+    function cheng(a, b) {
+        return a*b;
+    }
 </script>
 
 <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
@@ -120,6 +166,7 @@
 </div>
 <div id="content">
     <button onclick="dtadd()">jajajja</button>
+    <button onclick="fengzh(2,9)">fengzhuan</button>
 </div>
 <div class="am-btn-toolbar">
     <button type="button" class="am-btn am-btn-primary js-demo-slider-btn" data-action="add">添加 slide</button>
@@ -148,13 +195,23 @@
 
     });
 </script>
-<footer class="footer_fixed" style="background: #fff;position:fixed; left:0; bottom:0;width: 100%">
-    <span><a href="index.html" class="aon"><i class="home_icon"></i><b>首页</b></a></span>
-    <span><a href="customer.html"><i class="customer_icon"></i><b>微客服</b></a></span>
-    <span><a href="store.html"><i class="store_icon"></i><b>店铺介绍</b></a></span>
-    <span><a href="carts.html"><i class="carts_icon"></i><b>购物车</b></a></span>
-    <span><a href="member.html"><i class="member_icon"></i><b>我的</b></a></span>
-</footer>
+<!--<div class="nav">-->
+    <!--<ul>-->
+        <!--<li>-->
+            <!--<a href="#"><span><img src="images/ni4.jpg" height="20"></span><span>充值卡</span></a>-->
+        <!--</li>-->
+        <!--<li style="position:relative;">-->
+            <!--<a href="#"><span><img src="images/ni3.jpg" height="20"></span><span>购买记录</span></a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="#"><span><img src="images/ni2.jpg" height="20"></span><span>我的篮子</span></a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="#"><span><img src="images/ni5.jpg" height="20"></span><span>个人中心</span></a>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
 
 </body>
 </html>

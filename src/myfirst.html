@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
+    <meta name="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 
@@ -23,7 +24,7 @@
     <!--Win8 or 10 -->
     <meta name="msapplication-TileImage" content="images/i/app.png">
     <meta name="msapplication-TileColor" content="#e1652f">
-
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <link rel="icon" type="image/png" href="images/i/favicon.png">
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="css/public.css">
@@ -42,18 +43,50 @@
     <script src="js/public.js"></script>
     <script>
         $(document).ready(function () {//当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 事件。
-//            $("#mybutton").click(function () {
-//                alert("请求！");
-//                $.post("http://39.108.233.120:8080/android/getPhoneList",
+            $("#mybutton").click(function () {
+                alert("请求！");
+//                $.post("http://127.0.0.1:8080/market/register",//可以获取
 //                    {
-//                        keyword: "",
-//                        page: "1",
-//                        rows: "20",
+//                        username: "455454",
+//                        password: "123456",
 //                    },
 //                    function (data, status) {
-//                        alert("数据: \n" + data + "\n状态: " + status);
+//                        alert("数据: \n" + data.response + "\n状态: " + status);
+//                    },
+//                    "json");
+//                var myjson = {
+//                    password: "123456",
+//                    username: "sulc",
+//                };
+//                alert(JSON.stringify(myjson));
+//                $.getJSON("http://127.0.0.1:8080/market/register",//可以获取
+//                    myjson,
+//                    function (result, status, xhr) {
+//                        alert("数据: \n" + result + "\n状态: " + status + "   ----xhr=" + xhr);
+//                        $.each(result, function (i, field) {
+//
+//                        });
 //                    });
-//            });
+                var myjson = {
+                    "password": "123456",
+                    "username": "sulc",
+                };
+                $.ajax({
+                    url: "http://127.0.0.1:8080/market/register",  //可以获取
+                    type : "POST",
+                    data : myjson,
+                    dataType:"json",
+                    success: function (data, status) {
+                        alert(JSON.stringify(data));
+                        //alert("数据: \n" + data + "\n状态: " + status);
+                    },
+                    error: function (data,xhr) {
+                        alert("错误提示： " + data.status + " " + xhr.statusText);
+
+                    }
+                });
+
+            });
         });
         //                    $(document).ready(function(){
         //                        $("#mybutton").click(function(){
@@ -72,39 +105,25 @@
         //        $(document).ready(function () {
         //            $("#mybutton").click(function () {
         //                alert("请求！");
-        //                $.ajax({
-        //                    url: "http://39.108.233.120:8080/android/doAppLogin",
-        //                    dataType: "json",
-        //                    data: {
-        //                        password: "123456",
-        //                        username: "sulc",
-        //                    },
-        //                    success: function (data, status) {
-        //                        alert("数据: \n" + data + "\n状态: " + status);
-        //                    },
-        //                    error: function (xhr) {
-        //                        alert("错误提示： " + xhr.status + " " + xhr.statusText);
         //
-        //                    }
-        //                });
         //            });
         //        });
 
 
-//                $(document).ready(function(){
-//                    $("#mybutton").click(function () {
-//                        $.getJSON("http://39.108.233.120:8080/android/doAppLogin",
-//                            {
-//                                password: "123456",
-//                                username: "sulc",
-//                            },
-//                            function(result){
-//                            $.each(result, function(i, field){
-//                                $("div").append(field + " ");
-//                            });
-//                        });
-//                    });
-//                });
+        //                $(document).ready(function(){
+        //                    $("#mybutton").click(function () {
+        //                        $.getJSON("http://39.108.233.120:8080/android/doAppLogin",
+        //                            {
+        //                                password: "123456",
+        //                                username: "sulc",
+        //                            },
+        //                            function(result){
+        //                            $.each(result, function(i, field){
+        //                                $("div").append(field + " ");
+        //                            });
+        //                        });
+        //                    });
+        //                });
     </script>
 
     <script type="text/javascript">
@@ -136,8 +155,7 @@
     </script>
     <script>
         var option = {
-            target: '#output1', // target element(s) to be updated with server response
-            url: "http://39.108.233.120:8080/android/doAppLogin",//默认是form action
+            url: "http://127.0.0.1:8080/market/register",//默认是form action  //能发送成功，后台获取不到
             type: "POST",
             // dataType : 'json',
             //headers : {"ClientCallMode" : "ajax"}, //添加请求头部
@@ -148,12 +166,36 @@
             },
         };
         function mylogin() {
-            alert("提交;option=" + option.toString());
             $("#myform").ajaxSubmit(option);
             return false;
         }
-
-
+        function mylogintwo() {//能发送成功，后台能获取
+            $.ajax({
+                type: 'post',
+                url: 'http://127.0.0.1:8080/market/register',
+                data: $("#myform").serialize(),
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    alert("请求成功");
+                }
+            });
+        }
+        function myloginthree() {//能发送成功，后台获取不到
+//            var fd = new FormData(document.getElementById("myform"));
+            var fd = new FormData($("#myform")[0]);
+//var fd = new FormData($("#myformid"));
+            $.ajax({
+                url: "http://127.0.0.1:8080/market/register",
+                type: "POST",
+                data: fd,
+                processData: false,  // 告诉jQuery不要去处理发送的数据
+                contentType: false,  // 告诉jQuery不要去设置Content-Type请求头
+                success: function (msg) {
+                    alert("Data Saved: " + msg);
+                }
+            });
+        }
         //        function mylogin(){
         //            alert("登陆了");
         //            var form = new FormData(document.getElementById("myform"));
@@ -197,15 +239,15 @@
     </script>
     <!--<script type="text/javascript">-无效->
         <!--$(function(){-->
-            <!--$('.am-slider').flexslider({-->
-                <!--playAfterPaused: 1000,-->
-                <!--animation: "fade",-->
-                <!--animationLoop: true,-->
-                <!--smoothHeight: true,-->
-                <!--animationSpeed: 1000,-->
-                <!--slideshowSpeed: 1000,-->
-            <!--});-->
-        <!--});-->
+    <!--$('.am-slider').flexslider({-->
+    <!--playAfterPaused: 1000,-->
+    <!--animation: "fade",-->
+    <!--animationLoop: true,-->
+    <!--smoothHeight: true,-->
+    <!--animationSpeed: 1000,-->
+    <!--slideshowSpeed: 1000,-->
+    <!--});-->
+    <!--});-->
     <!--</script>-->
 </head>
 <body>
@@ -231,7 +273,7 @@
     </div>
 </header>
 
-<div data-am-widget="slider"  class="am-slider am-slider-c2" data-am-slider='{"directionNav":false}'>
+<div data-am-widget="slider" class="am-slider am-slider-c2" data-am-slider='{"directionNav":false}'>
     <ul class="am-slides">
         <li>
             <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
@@ -342,24 +384,28 @@
         <property name="defaultEncoding" value="UTF-8"></property>
         <property name="maxInMemorySize" value="10240000"></property>
     </bean>
-    <form class="am-form" id="myform" style="text-align: center;margin-left: 14%;margin-right: 14%">
-        <div class="am-form-group" style="align-content: center;height: 34px;">
-            <label for="doc-ipt-email-1"
-                   style="float: left;width: 20%;vertical-align: middle;text-align: center;margin-top: 1px;margin-right: 2px">用户名：</label>
-            <input type="text" class="" name="username" id="doc-ipt-email-1" placeholder="输入用户名"
-                   style="border-radius: 4px;width: 70%;vertical-align: middle">
+    <form class="am-form" id="myform" method="post" enctype="multipart/form-data"
+          style="text-align: center;margin-left: 14%;margin-right: 14%">
+        <div>
+            <div class="am-form-group" style="align-content: center;height: 34px;">
+                <label for="doc-ipt-email-1"
+                       style="float: left;width: 20%;vertical-align: middle;text-align: center;margin-top: 1px;margin-right: 2px">用户名：</label>
+                <input type="text" name="username" id="doc-ipt-email-1" placeholder="输入用户名"
+                       style="border-radius: 4px;width: 70%;vertical-align: middle">
+            </div>
+            <div class="am-form-group">
+                <label for="doc-ipt-pwd-1">密码</label>
+                <input type="password" maxlength="11" name="password" id="doc-ipt-pwd-1" placeholder="输入11位密码"
+                       style="border-radius: 4px">
+            </div>
+            <button id="tijiao" type="submit" onclick="myloginthree()">登陆</button>
+            <div id="output1">nih</div>
         </div>
-        <div class="am-form-group">
-            <label for="doc-ipt-pwd-1">密码</label>
-            <input type="password" maxlength="11" class="" name="password" id="doc-ipt-pwd-1" placeholder="输入11位密码"
-                   style="border-radius: 4px">
-        </div>
-        <button id="tijiao" type="submit" onclick="mylogin()">登陆</button>
-        <div id="output1">nih</div>
+
     </form>
 </div>
 <script>
-    $(function(){
+    $(function () {
         const onAction = function (index, direction) {
             alert('激活的幻灯片编号：', index, '，滚动方向：', direction);
         };
