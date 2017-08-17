@@ -172,7 +172,25 @@ document.getElementById("demo").innerHTML=Date();
  position:relative 相对定位元素的定位是相对其正常位置
  position: absolute 定位
       绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>:
-
+  
+  
+  数据定义与储存。
+  action-data与action-type 自定义数据方便操作。
+  
+  <div id='test' data-age="23">html5 data-*自定义属性 data-age</div>
+  获取$('#test').data('age');
+  
+  if(typeof(Storage)!=="undefined")
+  {
+    localStorage.haha="jokoo";
+    document.getElementById("result").innerHTML="网站名：" + localStorage.haha;
+  }
+  else
+  {
+    document.getElementById("result").innerHTML="对不起，您的浏览器不支持 web 存储。";
+  }
+  
+  
 3.关于大量的数据提交 可以考虑表单提交： 也可以FormData对象是html5的一个对象。
 4.关于节点的操作：
 <div id="test">

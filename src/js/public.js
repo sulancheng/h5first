@@ -1,4 +1,14 @@
+var pathpah = "http://127.0.0.1:8080/market/register";
+function getpath(bo) {
+    if(bo){
+        pathpah = "http://127.0.0.1:8080/market/register";
+    }else {
+        pathpah = "http://127.0.0.1:8080/market/registernimei";
+    }
+    return pathpah;
+}
 $(document).ready(function(){
+
     //鼠标悬停变换图片 <img data-replace-img="替换图片地址" src="" />
     $('img').mouseover(function(){
         var datatext=$(this).data("replace-img");
