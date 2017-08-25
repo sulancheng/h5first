@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>视频征集</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <meta content="house365" name="author">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=640, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="white" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi,width=device-width, width=640,user-scalable=no">
+    <link rel="stylesheet" href="/res/weixin/css/style.css?v1"
+          type="text/css">
+
+    <link rel="stylesheet"
+          href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script
+        src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script
+        src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta name="viewport"
+          content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <!--移动端版本兼容 end -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>
+    <img src="/res/hzweixin/images/collectvideo.jpg" alt=""
+         style="width: 100%;" />
+</div>
+<form action="/hzweixin/saveVideo" method="post"
+      enctype="multipart/form-data" id="collect">
+    <div style="padding: 20px">
+        <div class="h3" style="margin-bottom: 20px; margin-left: 10px;">主题</div>
+        <div class="h2" style="margin-bottom: 40px; margin-left: 10px;">
+            <input type="text" id="title" name="title"
+                   style="width: 95%; height: 50px; border: solid 1px #ccc;">
+        </div>
+        <div class="h3" style="margin-bottom: 20px; margin-left: 10px;">类型</div>
+        <div class="h4" style="margin-bottom: 40px; margin-left: 10px;">
+            <select name="menuid" id="menuid" >
+
+                <option value="1"
+                >政府动态</option>
+
+                <option value="2"
+                >企业动态</option>
+
+
+
+                <option value="3"
+                >社会动态</option>
+
+
+
+                <option value="4"
+                >惠州名片</option>
+
+
+
+                <option value="5"
+                >专栏动态</option>
+
+
+
+                <option value="6"
+                >总体介绍</option>
+
+
+
+                <option value="7"
+                >区县介绍</option>
+
+
+
+                <option value="8"
+                >风土人情</option>
+
+
+
+                <option value="9"
+                >精品路线</option>
+
+
+
+                <option value="10"
+                >本土特产</option>
+
+
+            </select>
+        </div>
+        <div class="h3" style="margin-bottom: 20px; margin-left: 10px;">备注</div>
+        <div class="h4" style="margin-bottom: 40px; margin-left: 10px;">
+            <select name="areaid">
+                <option value="1">惠城区</option>
+                <option value="2">惠阳区</option>
+                <option value="3">惠东县</option>
+                <option value="4">博罗县</option>
+                <option value="5">龙门县</option>
+                <option value="6">大亚湾高新区</option>
+                <option value="7">仲恺高新区</option>
+            </select>
+        </div>
+
+        <div class="h3" style="margin-bottom: 20px; margin-left: 10px;">简要介绍</div>
+        <div class="h4" style="margin-bottom: 40px; margin-left: 10px;">
+				<textarea rows="5" id="content" cols="30" name=content placeholder="不超过150字(区县视频上传时需要备注好各区县)"
+                          style="width: 95%; border: solid 1px #ccc;"></textarea>
+        </div>
+        <div class="h3" style="margin-bottom: 20px; margin-left: 10px;">上传视频</div>
+        <div class="h4" style="margin-bottom: 40px; margin-left: 10px;">
+            <input type="file" value="" name="video" id="video"   />
+        </div>
+        <div class="h3" style="margin-bottom: 20px; margin-left: 10px;">上传视频封面</div>
+        <div class="h4" style="margin-bottom: 40px; margin-left: 10px;">
+            <input type="file" value="" name="image"   />
+        </div>
+        <div class="h3" style="text-align: center;">
+            <input type="button" value="提交"
+                   style="width: 70%; height: 60px; background: red; color: white; border-color: red"
+                   onclick="check();">
+        </div>
+    </div>
+
+</form>
+
+</body>
+<script>
+    function check(){
+        if($("#title").val() == ""){
+            alert("请输入题目");
+            return false;
+        }
+        if($("#content").val() == ""){
+            alert("请输入内容");
+            return false;
+        }
+        if($("#video").val() == ""){
+            alert("请选择上传视频");
+            return false;
+        }
+        if($("#video").val().indexOf(".mp4") < 0){
+            alert("请选择mp4的视频文件");
+            return false;
+        }
+        $.ajax({
+            url : '/hzweixin/person/uploadVideo',
+            type : 'POST',
+            cache : false,
+            data : new FormData(
+                $('#collect')[0]),
+            processData : false,
+            contentType : false
+        }).success(
+            function(data) {
+                if(data.code == 0){
+                    alert("上传成功");
+                    window.location.href = "/hzweixin/person/upload";
+                } else {
+                    alert("上传失败，请您重试");
+                    window.location.href = "/hzweixin/person/upload";
+                }
+            }).fail(function(data) {
+
+        });
+    }
+
+
+
+</script>
+</html>

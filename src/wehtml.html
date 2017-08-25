@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <title>Title</title>
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <style>
+        .content ul li h4{
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<!-- body 顶部加上如下代码 -->
+<div class="weui-pull-to-refresh__layer">
+    <div class='weui-pull-to-refresh__arrow'></div>
+    <div class='weui-pull-to-refresh__preloader'></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+</div>
+<div class="content-padded">
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-panel__hd">图文组合列表</div>
+        <div class="weui-panel__bd">
+            <a class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img style="width: 25px ;height: 25px ;vertical-align:middle" class="weui-media-box__thumb"
+                         src="images/shang.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">标题一</h4>
+                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                </div>
+            </a>
+            <a class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img style="width: 25px ;height: 25px ;vertical-align:middle" class="weui-media-box__thumb"
+                         src="images/shang.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">标题二</h4>
+                    <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 其他内容 -->
+
+<!-- body 最后 -->
+
+<script>
+    $(document).ready(function () {
+        $(document.body).pullToRefresh();
+
+    });
+    $(document.body).on("pull-to-refresh", function () {
+        //alert("正在刷新");
+        var self = this
+        setTimeout(function () {
+            $(self).pullToRefreshDone();
+        }, 2000)
+    });
+
+</script>
+</body>
+</html>

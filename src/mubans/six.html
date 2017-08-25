@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+    <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.widgets.helper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .carddiv {
+            position: relative;
+            margin-top: 12px;
+            left: -15px;
+            width: 100%;
+            background-color: #f5f9fc;
+            box-shadow: 6px 6px 3px #888888;
+        }
+
+        .media-object {
+            width: 110px;
+            height: 130px;
+            margin: 12px 12px 12px 12px;
+
+        }
+
+        .media-body {
+            padding-top: 5px;
+            padding-right: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+            $(function() {
+                $('.am-slider-manual').flexslider({
+                    animation: "slide",             // String: ["fade"|"slide"]，动画效果
+                    controlNav: false,               // Boolean: 是否创建控制点
+                    reverse: true,                 // Boolean: 翻转 slide 运动方向
+                    slideshowSpeed: 3000,           // Integer: ms 滚动间隔时间
+                });
+                $("#zongconent").click(function () {
+
+                    if($("#miaoswenz").is(":hidden")) {
+                        alert("出现的")
+                    }else {
+                        $("#miaoswenz").toggle();
+                        alert("隐藏了")
+                        return false;
+                    }
+
+                });
+                $("#ullicon").click(function () {
+                    if($("#miaoswenz").is(":hidden")) {
+                        //做自己的事情
+                        alert("阻止事件")
+                        return false;
+                    }else {
+                        $("#miaoswenz").toggle();
+                        return false;
+                    }
+                });
+            });
+    </script>
+</head>
+<body>
+
+<div id="zongconent" style="background-color: #eaeaea;height: 1000px;top: 0;margin-top: 0px" >
+    <!--轮播图开始-->
+    <div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual" data-am-slider='{"directionNav":false}' style="bottom: 0;margin-bottom: 0px">
+        <ul class="am-slides">
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+
+            </li>
+        </ul>
+    </div>
+    <!--轮播图end-->
+    <div class="listcard" >
+        <!--列表st-->
+        <ul style="list-style: none">
+            <li class="carddiv" id="ullicon">
+                <a class="media-left" href="#">
+                    <img class="media-object"
+                         src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
+                         alt="媒体对象">
+                </a>
+                <div class="media-body" style="font-size: 13px">
+                    <h4 class="" style="margin-top: 10px">媒体标题</h4>
+                    <span style="position: relative;top: -10px">
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                    </span>
+
+                </div>
+            </li>
+            <li class="carddiv">
+                <a class="media-left" href="#">
+                    <img class="media-object"
+                         src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
+                         alt="媒体对象">
+                </a>
+                <div class="media-body" style="font-size: 13px">
+                    <h4 class="" style="margin-top: 10px">媒体标题</h4>
+                    <span style="position: relative;top: -10px">
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                    </span>
+
+                </div>
+            </li>
+            <li class="carddiv">
+                <a class="media-left" href="#">
+                    <img class="media-object"
+                         src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
+                         alt="媒体对象">
+                </a>
+                <div class="media-body" style="font-size: 13px">
+                    <h4 class="" style="margin-top: 10px">媒体标题</h4>
+                    <span style="position: relative;top: -10px">
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                    </span>
+
+                </div>
+            </li>
+        </ul>
+        <!--列表end-->
+    </div>
+    <div style="display: block;top: 0px;width: 100%;height: 36px;text-align: center">
+        <h5 id="miaoswenz" style="display: inline-block">新闻内容</h5>
+        <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
+        <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
+    </div>
+
+</div>
+</body>
+</html>

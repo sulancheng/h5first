@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>万聚田园</TITLE><LINK rel=stylesheet href="/res/hzweixin/pinglun/css/style.css"><LINK rel=stylesheet href="/res/hzweixin/pinglun/css/comment.css">
+    <META charset=utf-8><LINK rel=stylesheet href="/res/hzweixin/pinglun/css/style.css"><LINK rel=stylesheet href="/res/hzweixin/pinglun/css/comment.css">
+    <META name=keywords content="">
+    <META name=description content="">
+    <META name=author content=house365>
+    <META name=viewport content="target-densitydpi=device-dpi, width=640, minimum-scale=1.0, maximum-scale=1.0">
+    <META name=apple-mobile-web-app-capable content=yes>
+    <META name=apple-mobile-web-app-status-bar-style content=white>
+    <META name=format-detection content=telephone=no>
+    <META name=viewport content="target-densitydpi=device-dpi,width=device-width, width=640,user-scalable=no"><LINK rel=stylesheet type=text/css href="http://192.168.0.6:8080/res/weixin/css/style.css?v1"><LINK rel=stylesheet href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <SCRIPT src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></SCRIPT>
+
+    <SCRIPT src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></SCRIPT>
+
+    <SCRIPT type=text/javascript>
+        var phoneWidth = parseInt(window.screen.width);
+        //alert(phoneWidth);    //320,480,720
+        var phoneScale = phoneWidth / 640;
+        var ua = navigator.userAgent; //获得浏览器的类型
+        //alert(ua);
+        if (/Android (\d+\.\d+)/
+                .test(ua)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                document
+                    .write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            } else {
+                document
+                    .write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document
+                .write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+            //document.write('<meta name="viewport" content="width=640, minimum-scale="1" maximum-scale="1" user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </SCRIPT>
+
+    <META name=viewport content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <META name=viewport content="width=640, user-scalable=no, target-densitydpi=device-dpi"><!--移动端版本兼容 end -->
+    <SCRIPT src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></SCRIPT>
+
+    <STYLE>.intro {
+        COLOR: #6dab2f
+    }
+    #huad DIV {
+        FONT-SIZE: 26px; HEIGHT: 100px; WIDTH: 100%; MARGIN-TOP: 2px; FONT-WEIGHT: 800; LINE-HEIGHT: 100px; text-shadow: 2PX 2PX 2PX #000000
+    }
+    </STYLE>
+</HEAD>
+<BODY windowc_onresizez="true">
+<DIV>
+    <DIV><IMG style="WIDTH: 100%" alt="" src="http://192.168.0.6:8080/thres/images/welcome.jpg"> </DIV>
+    <DIV>
+        <HR style="MARGIN-BOTTOM: 0px; BORDER-TOP: #6dab2f 2px solid; WIDTH: 70%; MARGIN-LEFT: 28%">
+        </HR></DIV>
+    <DIV class=intro>
+        <DIV style="WIDTH: 31%; PADDING-LEFT: 15px; DISPLAY: inline-block"><IMG style="HEIGHT: 120px; WIDTH: 80%" src="http://192.168.0.6:8080/thres/images/gardenintro.jpg"></DIV>
+        <DIV style="WIDTH: 69%; FLOAT: right; PADDING-TOP: 10px; CLEAR: both; DISPLAY: inline-block; PADDING-RIGHT: 15px"><STRONG>潼湖万聚观光园</STRONG>- - - - - -将以庄园经济,时尚休闲为核心理念， 以种植,农业观光,户外扩展为功能导向。目前园区正按照建设 规划方案逐步向前推进,挤出建设不断完善,文化内涵进一步提升,生态功能不断增强。</DIV></DIV>
+    <DIV>
+        <HR style="MARGIN-BOTTOM: 0px; BORDER-TOP: #6dab2f 2px solid; WIDTH: 70%; MARGIN-TOP: 0px; MARGIN-LEFT: 28%">
+        </HR></DIV>
+    <DIV onclick=photo() style="MARGIN: 15px">
+        <IMG id=tmap style="HEIGHT: 100%; WIDTH: 100%" src="http://192.168.0.6:8080/thres/images/tmap.jpg">
+        <IMG src="http://192.168.0.6:8080/thres/images/toobig.png"> </DIV>
+    <DIV>
+        <DIV style="WIDTH: 31%; PADDING-LEFT: 15px; DISPLAY: inline-block"><IMG id=tmap src="http://192.168.0.6:8080/thres/images/guihua.jpg"></DIV>
+        <DIV style="WIDTH: 69%; FLOAT: right; COLOR: #6dab2f; CLEAR: both; DISPLAY: inline-block; PADDING-RIGHT: 15px">2017年,是潼湖生态智慧区的建设年,各方面发展驶入快车道,全面开启"三年初具规模,五年基本成型"实施行动计划总投资120亿元的万城智慧项目启动建设;</DIV></DIV>
+    <DIV style="HEIGHT: 80px; MARGIN-TOP: 3%; POSITION: relative; BACKGROUND-COLOR: #6dab2f"></DIV><!-- 浮动 -->
+    <DIV onclick=tese(); id=tese style="FONT-SIZE: 25px; HEIGHT: 300px; WIDTH: 50px; BACKGROUND: #6dab2f; POSITION: fixed; FONT-WEIGHT: 400; COLOR: white; TEXT-ALIGN: center; LEFT: 0px; DISPLAY: block; TOP: 40%">
+        <DIV style="MARGIN: 80px 5px 60px">特色景点</DIV></DIV>
+    <DIV onclick=huad(); id=huad style="OVERFLOW: auto; HEIGHT: 100%; WIDTH: 300px; POSITION: fixed; COLOR: #ffffff; LEFT: 0px; DISPLAY: none; TOP: 0px">
+        <DIV onclick=shw(1)><IMG style="MARGIN: 10px" alt=1 src="/thres/img/北服务大厅.png">北入口服务中心</DIV>
+        <DIV onclick=shw(2)><IMG style="MARGIN: 10px" alt=2 src="/thres/img/食堂.png">食堂</DIV>
+        <DIV onclick=shw(3)><IMG style="MARGIN: 10px" alt=3 src="/thres/img/宿舍.png">宿舍</DIV>
+        <DIV onclick=shw(4)><IMG style="MARGIN: 10px" alt=4 src="/thres/img/宾馆.png">望江大酒店</DIV>
+        <DIV onclick=shw(5)><IMG style="MARGIN: 10px" alt=5 src="/thres/img/望江平台.png">望江平台</DIV>
+        <DIV onclick=shw(6)><IMG style="MARGIN: 10px" alt=6 src="/thres/img/北停车场.png">北入口停车场</DIV>
+        <DIV onclick=shw(7)><IMG style="MARGIN: 10px" alt=7 src="/thres/img/亲水驳岸.png">亲水驳岸</DIV>
+        <DIV onclick=shw(8)><IMG style="MARGIN: 10px" alt=8 src="/thres/img/垂钓园.png">垂钓园</DIV>
+        <DIV onclick=shw(9)><IMG style="MARGIN: 10px" alt=9 src="/thres/img/茗澜茶景园.png">茗澜茶景园</DIV>
+        <DIV onclick=shw(10)><IMG style="MARGIN: 10px" alt=10 src="/thres/img/农家厨房.png">农家厨房</DIV>
+        <DIV onclick=shw(11)><IMG style="MARGIN: 10px" alt=11 src="/thres/img/创意茶馆.png">创意茶馆</DIV>
+        <DIV onclick=shw(12)><IMG style="MARGIN: 10px" alt=12 src="/thres/img/青少年拓展基地.png">青少年素质拓展基地</DIV>
+        <DIV onclick=shw(13)><IMG style="MARGIN: 10px" alt=13 src="/thres/img/创意集装箱.png">创意集装箱</DIV>
+        <DIV onclick=shw(14)><IMG style="MARGIN: 10px" alt=14 src="/thres/img/抢滩登陆.png">抢滩登陆</DIV>
+        <DIV onclick=shw(15)><IMG style="MARGIN: 10px" alt=15 src="/thres/img/爱丽丝仙境.png">爱丽丝仙境</DIV>
+        <DIV onclick=shw(16)><IMG style="MARGIN: 10px" alt=16 src="/thres/img/普罗旺斯摄影基地.png">普罗旺斯摄影基地</DIV>
+        <DIV onclick=shw(17)><IMG style="MARGIN: 10px" alt=17 src="/thres/img/稻浪伐舟.png">稻浪伐舟</DIV>
+        <DIV onclick=shw(18)><IMG style="MARGIN: 10px" alt=18 src="/thres/img/越野车体验基地.png">越野车体验基地</DIV>
+        <DIV onclick=shw(19)><IMG style="MARGIN: 10px" alt=19 src="/thres/img/真人CS实战基地.png">真人CS实战基地</DIV>
+        <DIV onclick=shw(20)><IMG style="MARGIN: 10px" alt=20 src="/thres/img/民俗文化村.png">民俗文化村</DIV>
+        <DIV onclick=shw(21)><IMG style="MARGIN: 10px" alt=21 src="/thres/img/DIY市民农园.png">DIY市民农园</DIV>
+        <DIV onclick=shw(22)><IMG style="MARGIN: 10px" alt=22 src="/thres/img/立体慢行步道.png">立体慢行步道</DIV>
+        <DIV onclick=shw(23)><IMG style="MARGIN: 10px" alt=23 src="/thres/img/南停车场.png">南入口停车场</DIV>
+        <DIV onclick=shw(24)><IMG style="MARGIN: 10px" alt=24 src="/thres/img/南服务大厅.png">南入口服务中心</DIV>
+        <DIV onclick=shw(25)><IMG style="MARGIN: 10px" alt=25 src="/thres/img/活力足球场.png">活力足球场</DIV>
+        <DIV onclick=shw(26)><IMG style="MARGIN: 10px" alt=26 src="/thres/img/四季花田.png">四季花田</DIV>
+        <DIV onclick=shw(27)><IMG style="MARGIN: 10px" alt=27 src="/thres/img/悠悠水车.png">悠悠水车</DIV>
+        <DIV onclick=shw(28)><IMG style="MARGIN: 10px" alt=28 src="/thres/img/坊间商业街.png">坊间商业街</DIV>
+        <DIV onclick=shw(29)><IMG style="MARGIN: 10px" alt=29 src="/thres/img/稻田画.png">稻田画</DIV>
+        <DIV onclick=shw(30)><IMG style="MARGIN: 10px" alt=30 src="/thres/img/植物工厂.png">植物工厂</DIV>
+        <DIV onclick=shw(31)><IMG style="MARGIN: 10px" alt=31 src="/thres/img/时光小火车.png">时光小火车</DIV>
+        <DIV onclick=shw(32)><IMG style="MARGIN: 10px" alt=32 src="/thres/img/中草药园.png">中草药园</DIV>
+        <DIV onclick=shw(33)><IMG style="MARGIN: 10px" alt=33 src="/thres/img/生态有机农场.png">生态有机农场</DIV>
+        <DIV onclick=shw(34)><IMG style="MARGIN: 10px" alt=34 src="/thres/img/生物育种实验田.png">生物育种实验田</DIV>
+        <DIV onclick=shw(35)><IMG style="MARGIN: 10px" alt=35 src="/thres/img/种子种苗繁育基地.png">种子种苗繁育基地</DIV></DIV>
+    <DIV style="DISPLAY: none"><AUDIO autoplay="autoplay" controls="controls"><SOURCE src="/thres/你要我怎样-治愈哥.mp3" type="audio/mpeg" /></DIV></DIV><!--
+	<div style="color:#6dab2f;text-align: center;margin-top: 30px;font-weight: 800;font-size: 20px">特色景点</div>
+	<hr style="width: 100%;border-top:2px solid #6dab2f;margin-top: 5px"/>
+	<div style="width: 100%;text-align: center;">
+		<table class="project">
+			<tr>
+
+				<td><a href="http://v.xiumi.us/board/v5/2WZNi/54372684"><img  src="/thres/images/cs.png"style="width: 100%;height: 60px"/></a></td>
+				<td><img  src="/thres/images/fl.png"style="width: 100%;height: 60px"/></td>
+				<td><a  href="http://v.xiumi.us/board/v5/2WZNi/54337361"><img  src="/thres/images/ca.png"style="width: 100%;height: 60px"/></a></td>
+				<td><a href="http://v.xiumi.us/stage/v5/2WZNi/54331969"><img  src="/thres/images/te.png"style="width: 100%;height: 60px"/></a></td>
+			</tr>
+			<tr >
+				<td><a href="http://v.xiumi.us/board/v5/2WZNi/54372684">真人CS基地实战</a></td>
+				<td>四季花田</td>
+				<td><a href="http://v.xiumi.us/board/v5/2WZNi/54337361">普罗旺斯摄影基地</a></td>
+				<td><a href="http://v.xiumi.us/stage/v5/2WZNi/54331969">创意茶馆</a></td>
+			</tr>
+			<tr>
+				<td><img  src="/thres/images/diycity.jpg"style="width: 100%;height: 60px"/></td>
+				<td><img  src="/thres/images/qsba.jpg"style="width: 100%;height: 60px"/></td>
+				<td><img  src="/thres/images/fjsyj.jpg"style="width: 100%;height: 60px"/></td>
+				<td><img  src="/thres/images/sgxhc.jpg"style="width: 100%;height: 60px"/></td>
+			</tr>
+			<tr>
+				<td>DIY市民乐园</td>
+				<td>亲水驳岸</td>
+				<td>坊间商业街</td>
+				<td>时光小火车</td>
+			</tr>
+
+		</table>
+
+	</div>
+
+	 -->
+<SCRIPT>
+    function photo(){
+        window.location.replace("http://192.168.0.6:8080/thweixin/photo") ;
+    }
+
+    function tese(){
+        document.getElementById("huad").style.display="block";
+        document.getElementById("tese").style.display="none";
+    }
+    function huad(){
+        document.getElementById("huad").style.display="none";
+        document.getElementById("tese").style.display="block";
+    }
+    function shw(number){
+
+        if (number==1) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/1.jpg";
+        }else if (number==2) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/2.jpg";
+        }else if (number==3) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/3.jpg";
+        }else if (number==4) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/4.jpg";
+        }else if (number==5) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/5.jpg";
+        }else if (number==6) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/6.jpg";
+        }else if (number==7) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/7.jpg";
+        }else if (number==8) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/8.jpg";
+        }else if (number==9) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/9.jpg";
+        }else if (number==10) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/10.jpg";
+        }else if (number==11) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/11.jpg";
+        }else if (number==12) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/12.jpg";
+        }else if (number==13) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/13.jpg";
+        }else if (number==14) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/14.jpg";
+        }else if (number==15) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/15.jpg";
+        }else if (number==16) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/16.jpg";
+        }else if (number==17) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/17.jpg";
+        }else if (number==18) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/18.jpg";
+        }else if (number==19) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/19.jpg";
+        }else if (number==20) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/20.jpg";
+        }else if (number==21) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/21.jpg";
+        }else if (number==22) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/22.jpg";
+        }else if (number==23) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/23.jpg";
+        }else if (number==24) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/24.jpg";
+        }else if (number==25) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/25.jpg";
+        }else if (number==26) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/26.jpg";
+        }else if (number==27) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/27.jpg";
+        }else if (number==28) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/28.jpg";
+        }else if (number==29) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/29.jpg";
+        }else if (number==30) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/30.jpg";
+        }else if (number==31) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/31.jpg";
+        }else if (number==32) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/32.jpg";
+        }else if (number==33) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/33.jpg";
+        }else if (number==34) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/34.jpg";
+        }else if (number==35) {
+            document.getElementById("tmap").src="http://192.168.0.6:8080/thres/img/35.jpg";
+        }
+
+    }
+
+</SCRIPT>
+</BODY></HTML>
