@@ -4,14 +4,80 @@
     <meta charset="UTF-8">
     <title>学习页面</title>
     <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <style>
+        .weui-media-box{
+            height: 0px;
+        }
+        .weui-panel__bd{
+            margin-top: 23px
+        }
+        #myhead{
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            margin-top: 10px;
+            margin-left: -22px;
+
+        }
+        #mingxing{
+            margin-left: -22px;
+        }
+        #myzan{
+            display: inline-block;
+            width: 25px;height: 25px;margin-top: 20px;
+        }
+        h7{
+            font-size: small
+        }
+        .shijdiv{
+            display: table-cell;vertical-align: middle
+        }
+        .shijdiv img{
+            width: 16px;height: 16px;display: inline
+        }
+        .shijdiv h5{
+            font-size: 4px;margin-bottom:3px ;display: inline-block
+        }
+
+        h4{
+            margin-left: 86px;margin-bottom: 18px;
+        }
+        .weui-panel{
+            margin-top: 0px;
+            padding-bottom: 12px;
+        }
+        /*#myzan ,#mypinl{*/
+        /*width: 16px;*/
+        /*height: 16px;*/
+        /*margin-top: 14px;*/
+        /*}*/
+        #myzannum,#mypinnum{
+            width: 12px;
+            height: 12px;
+            font-size: 12px;
+            margin-left: -30px;
+            margin-top: -20px;
+        }
+        #mycontent{
+            display: inline-block;
+            margin-left: 70px;
+            padding-top: 6px;
+            margin-right: 14px;
+        }
+    </style>
     <script>
        function getconteny() {
           var content =window.Android.getContent();
-          alert(content);
+          //alert(content);
           $("#xuecontent").html(content);
            binali();
            binalitwo();
            //binalithree();
+           myaddtwo();
         }
 
        function binali() {
@@ -40,6 +106,56 @@
            //myvideo.remove();//可以删除
            alert(myvideo.attr("preload"));
        }
+       function myaddtwo() {
+           for (var i=0;i<5;i++)
+           {
+               var he='<div class="weui-panel weui-panel_access" >\n' +
+                   '        <div class="weui-panel__bd">\n' +
+                   '            <div class="weui-media-box weui-media-box_appmsg">\n' +
+                   '                <div class="weui-media-box__hd">\n' +
+                   '                    <img class="weui-media-box__thumb myclass" id="myhead" src="http://img2.woyaogexing.com/2017/08/31/20095568c6fd2959!400x400_big.jpg">\n' +
+                   '                </div>\n' +
+                   '                <div class="weui-media-box__bd" id="mingxing">\n' +
+                   '                    <h7 class="weui-media-box__title">姓名</h7>\n' +
+                   '                    <div class="shijdiv sevn" >\n' +
+                   '                        <img class="weui-media-box__desc three" src="apple-touch-icon.png" style="margin-bottom: 2px">\n' +
+                   '                        <h5 class="weui-media-box__desc">3小时前</h5>\n' +
+                   '                    </div>\n' +
+                   '\n' +
+                   '                </div>\n' +
+                   '                <div class="weui-media-box__hd six">\n' +
+                   '                    <img class="weui-media-box__thumb myzan" id="myzan'+i+'"  data-action="'+i+'" src="http://img2.woyaogexing.com/2017/08/31/20095568c6fd2959!400x400_big.jpg" style="width: 16px;height: 16px;margin-top: 14px">\n' +
+                   '\n' +
+                   '                </div>\n' +
+                   '                <span id="myzannum">8</span>\n' +
+                   '                <div class="weui-media-box__hd eig">\n' +
+                   '                    <img class="weui-media-box__thumb mypinl" id="mypinl"  src="http://img2.woyaogexing.com/2017/08/31/20095568c6fd2959!400x400_big.jpg" style="width: 16px;height: 16px;margin-top: 14px">\n' +
+                   '                </div>\n' +
+                   '                <span id="mypinnum">8</span>\n' +
+                   '            </div>\n' +
+                   '            <span id="mycontent">我今天去吃饭了福克拉山发生符合库拉索飞洒的立刻拒绝付款代理防守反击拉萨的的就是可是你在哪里？发送</span>\n' +
+                   '        </div>\n' +
+                   '    </div>'
+
+
+
+
+               var jhe=' <div class="weui-panel weui-panel_access">' +
+                   ' <div class="weui-panel__bd"> <div class="weui-media-box weui-media-box_appmsg"> <div class="weui-media-box__hd"> ' +
+                   '<img class="weui-media-box__thumb myclass" id="myhead" src="images/shang.png"> </div> <div class="weui-media-box__bd">' +
+                   ' <h7 class="weui-media-box__title">'+name+'</h7> <div class="shijdiv sevn" > <img class="weui-media-box__desc three" src="apple-touch-icon.png"> ' +
+                   '<h5 class="weui-media-box__desc">3小时前</h5> </div> </div> <div class="weui-media-box__hd six"> <img class="weui-media-box__thumb zan" id="myzan"  src="images/shang.png"> </div> </div> <h4 >我今天去吃饭了</h4> </div> </div>';
+               $("#contnetul").append(he);
+               //alert($("#myzan"+xnum).attr("data-action"));
+               $("#myzan"+i).click(function ()
+               {
+                   alert(this.id);
+                   alert(this.getAttribute("data-action"))
+                   //woshj(this.id,this.attr("data-action"));
+               })
+           }
+
+       }
     </script>
     <style>
         .woshezhide{
@@ -52,6 +168,42 @@
     <div id="xuecontent" style="width: 100%">
 
     </div>
+    <div>
+        <hr style="height:1px;width:30%;border:none;border-top:1px solid #dedede;display: inline-block;margin-left: 13%" />
+        <h5 style="display: inline-block;text-align: center;margin-left: 12px;margin-right: 12px">评论区域</h5>
+        <hr style="height:1px;width:30%;border:none;border-top:1px solid #dedede;display: inline-block" />
+
+    </div>
+    <div id="contnetul" style="margin-top: 10%">
+        <!--<div class="weui-panel weui-panel_access" >-->
+        <!--<div class="weui-panel__bd">-->
+        <!--<div class="weui-media-box weui-media-box_appmsg">-->
+        <!--<div class="weui-media-box__hd">-->
+        <!--<img class="weui-media-box__thumb myclass" id="myhead" src="images/shang.png">-->
+        <!--</div>-->
+        <!--<div class="weui-media-box__bd" id="mingxing">-->
+        <!--<h7 class="weui-media-box__title">姓名</h7>-->
+        <!--<div class="shijdiv sevn" >-->
+        <!--<img class="weui-media-box__desc three" src="apple-touch-icon.png" style="margin-bottom: 2px">-->
+        <!--<h5 class="weui-media-box__desc">3小时前</h5>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <!--<div class="weui-media-box__hd six">-->
+        <!--<img class="weui-media-box__thumb myzan" id="myzan"  src="images/speak.png" style="width: 16px;height: 16px;margin-top: 14px">-->
+
+        <!--</div>-->
+        <!--<span id="myzannum">8</span>-->
+        <!--<div class="weui-media-box__hd eig">-->
+        <!--<img class="weui-media-box__thumb mypinl" id="mypinl"  src="images/speak.png" style="width: 16px;height: 16px;margin-top: 14px">-->
+        <!--</div>-->
+        <!--<span id="mypinnum">8</span>-->
+        <!--</div>-->
+        <!--<span id="mycontent">我今天去吃饭了福克拉山发生符合库拉索飞洒的立刻拒绝付款代理防守反击拉萨的的就是可是你在哪里？发送</span>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+
     <div class="prolist"></div>
 </body>
 </html>

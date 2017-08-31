@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/0.4.3/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/0.8.3/css/jquery-weui.min.css">
+    <script src="//cdn.bootcss.com/jquery-weui/0.8.3/js/jquery-weui.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
     <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
@@ -32,6 +35,7 @@
             padding-top: 5px;
             padding-right: 10px;
         }
+
     </style>
 
     <script type="text/javascript">
@@ -63,12 +67,13 @@
                         return false;
                     }
                 });
+
             });
     </script>
 </head>
 <body>
 
-<div id="zongconent" style="background-color: #eaeaea;height: 1000px;top: 0;margin-top: 0px" >
+<div id="zongconent" style="background-color: #eaeaea;height: 160%;top: 0;margin-top: 0px" >
     <!--轮播图开始-->
     <div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual" data-am-slider='{"directionNav":false}' style="bottom: 0;margin-bottom: 0px">
         <ul class="am-slides">
@@ -152,6 +157,26 @@
         <h5 id="miaoswenz" style="display: inline-block">新闻内容</h5>
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
+    </div>
+    <div class="weui_cells weui_cells_access">
+        <div class="weui_cell" href="javascript:;" style="float: left;right: 0px" >
+            <div class="weui_cell_hd">
+                <img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"  style="width:20px;margin-right:5px;display:block">
+            </div>
+
+            <div class="weui_cell_ft" id="myzan" style="border: none">
+                说明文字
+            </div>
+        </div>
+        <div class="weui_cell" href="javascript:;" style="float: left">
+            <div class="weui_cell_hd" style="display: inline">
+                <img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"  style="width:20px;margin-right:5px;display:block">
+            </div>
+
+            <div style="display: inline">
+                说明文字
+            </div>
+        </div>
     </div>
 
 </div>
