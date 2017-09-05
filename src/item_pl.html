@@ -17,6 +17,10 @@
     <!-- body 最后 -->
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <style>
+
+        .prolist::after, .prolist:after, .prolist after { clear: both; content: "."; display: block; font-size: 0; height: 42px; line-height: 0; visibility: hidden; }
+    </style>
     <script>
         var mydata = '[' +
             '{"age":19,"contact":"guofan@baihe.com","desc":"我是弯的我怕谁","sex":"弯","username":"郭凡"},' +
@@ -37,7 +41,7 @@
                     '        <div class="weui-panel__bd">\n' +
                     '            <div class="weui-media-box weui-media-box_appmsg">\n' +
                     '                <div class="weui-media-box__hd">\n' +
-                    '                    <img class="weui-media-box__thumb myclass" id="myhead" src="images/shang.png">\n' +
+                    '                    <img class="weui-media-box__thumb  img-circle myclass" id="myhead" src="images/shang.png">\n' +
                     '                </div>\n' +
                     '                <div class="weui-media-box__bd" id="mingxing">\n' +
                     '                    <h7 class="weui-media-box__title">姓名</h7>\n' +
@@ -247,6 +251,14 @@
         <!--</div>-->
     <!--</div>-->
 </div>
-
+<img src="http://www.leifang.xin:8080/upload/files/1503555766142-sfj.jpg" style="display: block;margin: auto" width="50%" alt="" />
+<!--<embed src="http://img.gmw.cn/flash/temp_flvplayer.swf?vcastr_file=http://111.205.184.233:5011/vod/3277eb803d497878aec4caf6cbeeb836.flv
+&amp;vcastr_title=gmw.cn&amp;IsShowBar=1&amp;BarColor=0xCCCCCC&amp;LogoText=GMW&amp;BarPosition=1&amp;IsContinue=0&amp;
+IsAutoPlay=1&amp;DefaultVolume=80" allowfullscreen="true" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+       type="application/x-shockwave-flash" width="100%" height="450">-->
+<p><b><a href="http://111.205.184.233:5011/vod/3277eb803d497878aec4caf6cbeeb836.flv" target="_blank" style="display:block;text-align: center;text-decoration: #afffb6">点击下载该压缩包</a></b></p>
+<p><b><a href="http://192.168.0.103:8080/upload/files/test.pdf" target="_blank" style="display:block;text-align: center;text-decoration: #afffb6">点击下载该压缩包</a></b></p>
+<embed controls="controls" src="http://www.leifang.xin:8080/upload/files/1504575667788-问责，动真格了！3分钟动漫看懂《中国共产党问责条例》.mp4" enablecontextmenu="false" autostart="true" width="480" height="400" />
+<div class="prolist"></div>
 </body>
 </html>
