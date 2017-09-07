@@ -90,7 +90,7 @@
            }
        }
        function binalitwo() {
-           var mydiv = $("#xuecontent")[0];
+           var mydiv = $("#xuecontent")[0];//可以,这个是dom对象
            var objs = mydiv.getElementsByTagName("span");
 
            //var myspan = mydiv.getElementsByTagName("span");
@@ -101,7 +101,7 @@
        }
        function binalithree() {
          //var myvideo =  $("video:first");
-           var myvideo = $("#xuecontent video");//可以
+           var myvideo = $("#xuecontent video");//可以,这个是jquery对象
            myvideo.attr("preload","metadata");
            //myvideo.remove();//可以删除
            alert(myvideo.attr("preload"));

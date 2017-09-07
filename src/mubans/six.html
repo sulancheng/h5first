@@ -18,10 +18,11 @@
         .carddiv {
             position: relative;
             margin-top: 12px;
+            margin-right: 6px;
             left: -15px;
             width: 100%;
             background-color: #f5f9fc;
-            box-shadow: 6px 6px 3px #888888;
+            box-shadow: 7px 7px 3px #888888;
         }
 
         .media-object {
@@ -35,7 +36,10 @@
             padding-top: 5px;
             padding-right: 10px;
         }
-
+        .mybutton{
+            margin-left: 6%;
+        }
+        .mybutton:visited {color:#00FF00;}  /* 已访问链接 */
     </style>
 
     <script type="text/javascript">
@@ -48,24 +52,12 @@
                 });
                 $("#zongconent").click(function () {
 
-                    if($("#miaoswenz").is(":hidden")) {
-                        alert("出现的")
-                    }else {
-                        $("#miaoswenz").toggle();
-                        alert("隐藏了")
-                        return false;
-                    }
 
                 });
-                $("#ullicon").click(function () {
-                    if($("#miaoswenz").is(":hidden")) {
-                        //做自己的事情
-                        alert("阻止事件")
-                        return false;
-                    }else {
-                        $("#miaoswenz").toggle();
-                        return false;
-                    }
+                $(".mybutton").click(function () {
+                    //$(this).attr("disabled","disabled");//不可点击
+                    $(this).css("background-color","#45ff44");//变绿色
+
                 });
 
             });
@@ -73,7 +65,7 @@
 </head>
 <body>
 
-<div id="zongconent" style="background-color: #eaeaea;height: 160%;top: 0;margin-top: 0px" >
+<div id="zongconent" style="background-color: #eaeaea;height: 100%" >
     <!--轮播图开始-->
     <div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual" data-am-slider='{"directionNav":false}' style="bottom: 0;margin-bottom: 0px">
         <ul class="am-slides">
@@ -153,12 +145,23 @@
         </ul>
         <!--列表end-->
     </div>
-    <div style="display: block;top: 0px;width: 100%;height: 36px;text-align: center">
+    <div style="display: block;margin-top: -20px;width: 100%;height: auto;text-align: center">
         <h5 id="miaoswenz" style="display: inline-block">新闻内容</h5>
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
     </div>
-    <div class="weui_cells weui_cells_access">
+    <!--按钮开始-->
+    <div style="display: block;text-align: center;height: 200px;background-color: #e56c0c;line-height: 200px;" >
+        <!-- 表示应谨慎采取的动作 -->
+        <button type="button" class="btn btn-warning mybutton">警告按钮</button>
+        <!-- 表示一个危险的或潜在的负面动作 -->
+        <button type="button" class="btn btn-danger mybutton" >危险按钮</button>
+        <button type="button" class="btn btn-success mybutton">成功按钮</button>
+        <button type="button" class="btn btn-success mybutton">成功按钮</button>
+    </div>
+    <!--按钮结束-->
+
+    <div class="weui_cells weui_cells_access" style="display: block;text-align: center">
         <div class="weui_cell" href="javascript:;" style="float: left;right: 0px" >
             <div class="weui_cell_hd">
                 <img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"  style="width:20px;margin-right:5px;display:block">
