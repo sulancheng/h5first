@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--主要是js中回调函数的写法-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<script>
+    function nihao(he) {
+        alert("今天你还好吗？"+he);
+    }
+    function dosomething(damsg, callback){
+        alert(damsg);
+        var abc=11;
+        if(typeof callback == "function")
+            callback(abc);
+    }
+//    dosomething("回调函数", function(){
+//        alert("和 jQuery 的 callbacks 形式一样!");
+//    });
+
+    dosomething("自己的回调",nihao);
+</script>
+<body>
+<!--主要是js中回调函数的写法-->
+
+
+</body>
+</html>

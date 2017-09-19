@@ -317,7 +317,7 @@ $.ajax({
             });
 （3）使用formdata上传表单 包含 文件图片上传。
 var fd = new FormData(document.getElementById("myformid"));
-//var fd = new FormData($("#myformid"));
+//var fd = new FormData($("#myformid")[0]);
 fd.append("CustomField", "This is some extra data");
 $.ajax({
   url: "stash.php",

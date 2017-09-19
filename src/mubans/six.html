@@ -40,6 +40,18 @@
             margin-left: 6%;
         }
         .mybutton:visited {color:#00FF00;}  /* 已访问链接 */
+        .riqi span{
+            width: 200px;
+            border-right: 1px solid #01a001;
+            border-bottom: 1px solid #ff0000;
+            border-left:1px dashed #ffe09f;
+            border-collapse:separate;
+            border-spacing:10px 50px;
+            padding: 10px;
+        }
+        .listcard ul li:active{
+            background-color: #0c7cb5;
+        }
     </style>
 
     <script type="text/javascript">
@@ -54,11 +66,13 @@
 
 
                 });
-                $(".mybutton").click(function () {
+                $(".mybuttonzu button").click(function () {
                     //$(this).attr("disabled","disabled");//不可点击
                     $(this).css("background-color","#45ff44");//变绿色
+                    $(this).siblings().css("background-color","#e56c0c");
 
                 });
+                $(".riqi span").text(new Date());
 
             });
     </script>
@@ -151,7 +165,7 @@
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
     </div>
     <!--按钮开始-->
-    <div style="display: block;text-align: center;height: 200px;background-color: #e56c0c;line-height: 200px;" >
+    <div class="mybuttonzu" style="display: block;text-align: center;height: 200px;background-color: #e56c0c;line-height: 200px;" >
         <!-- 表示应谨慎采取的动作 -->
         <button type="button" class="btn btn-warning mybutton">警告按钮</button>
         <!-- 表示一个危险的或潜在的负面动作 -->
@@ -160,7 +174,9 @@
         <button type="button" class="btn btn-success mybutton">成功按钮</button>
     </div>
     <!--按钮结束-->
-
+    <div class="riqi" style="text-align: center">
+        日期：<span ></span>
+    </div>
     <div class="weui_cells weui_cells_access" style="display: block;text-align: center">
         <div class="weui_cell" href="javascript:;" style="float: left;right: 0px" >
             <div class="weui_cell_hd">
