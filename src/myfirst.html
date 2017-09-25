@@ -182,7 +182,7 @@
         function mylogintwo() {//能发送成功，后台能获取
             $.ajax({
                 type: 'post',
-                url: 'http://127.0.0.1:8080/market/register',
+                url: 'http://127.0.0.1:8081/student/form',
                 data: $("#myform").serialize(),
                 cache: false,
                 dataType: 'json',
@@ -193,10 +193,10 @@
         }
         function myloginthree() {//能发送成功，后台获取不到
 //            var fd = new FormData(document.getElementById("myform"));
-            var fd = new FormData($("#myform")[0]);
+           var fd = new FormData($("#myform")[0]);
 //var fd = new FormData($("#myformid"));
             $.ajax({
-                url: "http://127.0.0.1:8080/market/register",
+                url: "http://127.0.0.1:8081/student/form",
                 type: "POST",
                 data: fd,
                 processData: false,  // 告诉jQuery不要去处理发送的数据
@@ -386,7 +386,6 @@
 
     <img id="preview" style="position: relative;left: 0px"/>
     <br/>
-    <input type="file" name="file" onchange="imgPreview(this)"/>
 </div>
 <div>
     <!-- 配置nultipartresolver,注意：id名必须这样写，不然会报错 -->
@@ -408,6 +407,7 @@
                 <input type="password" maxlength="11" name="password" id="doc-ipt-pwd-1" placeholder="输入11位密码"
                        style="border-radius: 4px">
             </div>
+            <input type="file" name="myfile" onchange="imgPreview(this)"/>
             <button id="tijiao" type="submit" onclick="mylogintwo()">登陆</button>
             <div id="output1">nih</div>
         </div>
