@@ -282,7 +282,7 @@
             }
 
         });
-        /*siblings()遍历  :eq() 选择器选取带有指定 index 值的元素。*/
+        /*siblings()遍历同胞  :eq() 选择器选取带有指定 index 值的元素。*/
         oLi.click(function(){
             var _index = $(this).index();
             oLi.eq(_index).addClass('active').siblings().removeClass('active');
