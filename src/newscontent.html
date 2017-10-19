@@ -112,6 +112,9 @@
            //myvideo.remove();//可以删除
            alert(myvideo.attr("preload"));
        }
+       function divclick(inti) {
+           alert(inti);
+       }
        function myaddtwo() {
            for (var i=0;i<5;i++)
            {
@@ -121,7 +124,7 @@
                    '                <div class="weui-media-box__hd">\n' +
                    '                    <img class="weui-media-box__thumb myclass" id="myhead" src="http://img2.woyaogexing.com/2017/08/31/20095568c6fd2959!400x400_big.jpg">\n' +
                    '                </div>\n' +
-                   '                <div class="weui-media-box__bd" id="mingxing">\n' +
+                   '                <div class="weui-media-box__bd" id="mingxing" onclick="divclick('+i+')">\n' +
                    '                    <h7 class="weui-media-box__title">姓名</h7>\n' +
                    '                    <div class="shijdiv sevn" >\n' +
                    '                        <img class="weui-media-box__desc three" src="apple-touch-icon.png" style="margin-bottom: 2px">\n' +
