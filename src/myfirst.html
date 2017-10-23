@@ -67,10 +67,7 @@
 //
 //                        });
 //                    });
-                var myjson = {
-                    "password": "123456",
-                    "username": "sulc",
-                };
+                var myjson = {password: "123456", username:"sulc"};
                 alert(getpath(false)),
                 $.ajax({
                     url: getpath(false),  //可以获取
@@ -79,7 +76,8 @@
                     dataType:"json",
                     //contentType: "application/json; charset=utf-8",//(可以)
                     success: function (data, status) {
-                        alert(JSON.stringify(data));
+                        //alert(JSON.stringify(data));
+                        alert(data);
                         //alert("数据: \n" + data + "\n状态: " + status);
                     },
                     error: function (data,xhr) {
@@ -191,7 +189,7 @@
                 },
             });
         }
-        function myloginthree() {//能发送成功，后台获取不到
+        function myloginthree() {//能发送成功，后台获取成功。
 //            var fd = new FormData(document.getElementById("myform"));
            var fd = new FormData($("#myform")[0]);
 //var fd = new FormData($("#myformid"));
@@ -408,7 +406,7 @@
                        style="border-radius: 4px">
             </div>
             <input type="file" name="myfile" onchange="imgPreview(this)"/>
-            <button id="tijiao" type="submit" onclick="mylogintwo()">登陆</button>
+            <button id="tijiao" type="submit" onclick="myloginthree()">登陆</button>
             <div id="output1">nih</div>
         </div>
 

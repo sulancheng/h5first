@@ -3,7 +3,7 @@ function getpath(bo) {
     if(bo){
         pathpah = "http://127.0.0.1:8080/market/register";
     }else {
-        pathpah = "http://127.0.0.1:8080/market/registernimei";
+        pathpah = "http://127.0.0.1:8081/student/form";
     }
     return pathpah;
 }
