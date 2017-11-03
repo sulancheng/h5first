@@ -163,11 +163,37 @@ document.getElementById("demo").innerHTML=Date();
 (1)我们对div设置一个float浮动属性即可解决不并排显示，只要你的并排div盒子总宽度小于或等于最外层盒子宽度即可实现多个div对象并排显示。float:left  会随着屏幕宽度高度的变化 实现排版的变化。
 (2).我们加入display:inline即可解决实现同行并排显示div盒子对象。
     未设置display样式效果截图：display: inline
-    
+  重要的添加内容： 
+  block元素可以包含block元素和inline元素；但inline元素只能包含inline元素。要注意的是这个是个大概的说法，每个特定的元素能包含的元素也是特定的，所以具体到个别元素上，这条规律是不适用的。
+  比如 P 元素，只能包含inline元素，而不能包含block元素。
+  一般来说，可以通过display:inline和display:block的设置，改变元素的布局级别。
+  
+   
     block元素的特点是：  块 有自动换行 <h> <p> <div>
     　　总是在新行上开始；
+    block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。
+    block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。
+    block元素可以设置margin和padding属性。
+    
     　inline元素的特点是：  内联  排一排。 
+    　inline元素的特点是： 
     　　和其他元素都在一行上；
+    　　高，行高及顶和底边距不可改变；
+    　　宽度就是它的文字或图片的宽度，不可改变。
+    　　<span>, <a>, <label>, <input>, <img>, <strong> 和<em>是inline元素的例子。
+    　　和其他元素都在一行上；
+        inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。
+        inline元素设置width,height属性无效。
+        inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；
+        但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。
+    
+    
+    inline-block的元素特点：
+    display:inline-block
+        简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。
+        比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。
+    　   将对象呈递为内联对象，但是对象的内容作为块对象呈递。旁边的内联对象会被呈递在同一行内，允许空格。(准确地说，应用此特性的元素呈现为内联对象，周围元素保持在同一行，但可以设置宽度和高度地块元素的属性)
+    
  （3）position:static  标签默认的就是这个   position:fixed 定位，窗口滚动它也不滚动
  position:relative 相对定位元素的定位是相对其正常位置
  position: absolute 定位

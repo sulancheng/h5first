@@ -21,7 +21,8 @@
             margin-right: 6px;
             left: -15px;
             width: 100%;
-            background-color: #f5f9fc;
+            background: #f5f9fc;
+            background: url("../images/logo.png");
             box-shadow: 7px 7px 3px #888888;
         }
 
@@ -36,52 +37,61 @@
             padding-top: 5px;
             padding-right: 10px;
         }
-        .mybutton{
-            margin-left: 6%;
+
+        .mybutton {
+            margin-left: 5%;
+            border-radius: 18px;
         }
-        .mybutton:visited {color:#00FF00;}  /* 已访问链接 */
-        .riqi span{
+
+        .mybutton:visited {
+            color: #00FF00;
+
+        }
+
+        /* 已访问链接 */
+        .riqi span {
             width: 200px;
             border-right: 1px solid #01a001;
             border-bottom: 3px solid #ff0000;
-            border-left:1px dashed #ffe09f;
-            border-collapse:separate;
-            border-spacing:10px 50px;
+            border-left: 1px dashed #ffe09f;
+            border-collapse: separate;
+            border-spacing: 10px 50px;
             padding: 10px 20px 10px 10px;
         }
-        .listcard ul li:active{
+
+        .listcard ul li:active {
             background-color: #0c7cb5;
         }
     </style>
 
     <script type="text/javascript">
-            $(function() {
-                $('.am-slider-manual').flexslider({
-                    animation: "slide",             // String: ["fade"|"slide"]，动画效果
-                    controlNav: false,               // Boolean: 是否创建控制点
-                    reverse: true,                 // Boolean: 翻转 slide 运动方向
-                    slideshowSpeed: 3000,           // Integer: ms 滚动间隔时间
-                });
-                $("#zongconent").click(function () {
+        $(function () {
+            $('.am-slider-manual').flexslider({
+                animation: "slide",             // String: ["fade"|"slide"]，动画效果
+                controlNav: false,               // Boolean: 是否创建控制点
+                reverse: true,                 // Boolean: 翻转 slide 运动方向
+                slideshowSpeed: 3000,           // Integer: ms 滚动间隔时间
+            });
+            $("#zongconent").click(function () {
 
-
-                });
-                $(".mybuttonzu button").click(function () {
-                    //$(this).attr("disabled","disabled");//不可点击
-                    $(this).css("background-color","#45ff44").siblings().css("background-color","#e56c0c");//变绿色
-                   // $(this).siblings().css("background-color","#e56c0c");
-
-                });
-                $(".riqi span").text(new Date());
 
             });
+            $(".mybuttonzu button").click(function () {
+                //$(this).attr("disabled","disabled");//不可点击
+                $(this).css("background-color", "#45ff44").siblings().css("background-color", "#e56c0c");//变绿色
+                // $(this).siblings().css("background-color","#e56c0c");
+            });
+            $(".riqi span").text(new Date());
+
+        });
     </script>
 </head>
 <body>
 
-<div id="zongconent" style="background-color: #eaeaea;height: 100%" >
+<div id="zongconent" style="background-color: #eaeaea;height: 100%">
     <!--轮播图开始-->
-    <div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual" data-am-slider='{"directionNav":false}' style="bottom: 0;margin-bottom: 0px">
+    <div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual" data-am-slider='{"directionNav":false}'
+         style="bottom: 0;margin-bottom: 0px">
         <ul class="am-slides">
             <li>
                 <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
@@ -102,11 +112,11 @@
         </ul>
     </div>
     <!--轮播图end-->
-    <div class="listcard" >
+    <div class="listcard">
         <!--列表st-->
         <ul style="list-style: none">
-            <li class="carddiv" id="ullicon">
-                <a class="media-left" href="#">
+            <li class="carddiv" id="ullicon" honclick="window.open('http://www.cnblogs.com')">
+                <a class="media-left">
                     <img class="media-object"
                          src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
                          alt="媒体对象">
@@ -159,34 +169,38 @@
         </ul>
         <!--列表end-->
     </div>
-
-
     <!--划线-->
-    <div id="Layer1" style="position: relative; width:1px; height:200px; z-index:1; background-color: #000000;layer-background-color: #000000; border: 1px none #000000; left: 143px"></div>
+    <div id="Layer1"
+         style="position: relative; width:1px; height:200px; z-index:1; background-color: #000000;layer-background-color: #000000; border: 1px none #000000; left: 143px"></div>
 
 
-    <div style="display: block;margin-top: -20px;width: 100%;height: auto;text-align: center">
+    <div style="display: block;margin-top: 10px;width: 100%;height: auto;text-align: center">
         <h5 id="miaoswenz" style="display: inline-block">新闻内容</h5>
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
         <h5 style="display: inline-block;margin-left: 10%">新闻内容</h5>
     </div>
     <!--按钮开始-->
-    <div class="mybuttonzu" style="display: block;text-align: center;height: 200px;background-color: #e56c0c;line-height: 200px;" >
+    <div class="mybuttonzu"
+         style="display: block;text-align: center;height: 200px;background-color: #e56c0c;line-height: 200px;">
+        <!--    <div class="mybuttonzu" style="display: flex;align-items: center;height: 200px;background-color: #e56c0c;" >-->
+        <!--也是可以居中-->
         <!-- 表示应谨慎采取的动作 -->
         <button type="button" class="btn btn-warning mybutton">警告按钮</button>
         <!-- 表示一个危险的或潜在的负面动作 -->
-        <button type="button" class="btn btn-danger mybutton" >危险按钮</button>
+        <button type="button" class="btn btn-danger mybutton">危险按钮</button>
         <button type="button" class="btn btn-success mybutton">成功按钮</button>
         <button type="button" class="btn btn-success mybutton">成功按钮</button>
     </div>
     <!--按钮结束-->
     <div class="riqi" style="text-align: center">
-        日期：<span ></span>
+        日期：<span></span>
     </div>
     <div class="weui_cells weui_cells_access" style="display: block;text-align: center">
-        <div class="weui_cell" href="javascript:;" style="float: left;right: 0px" >
+        <div class="weui_cell" href="javascript:;" style="float: left;right: 0px">
             <div class="weui_cell_hd">
-                <img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"  style="width:20px;margin-right:5px;display:block">
+                <img
+                    src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
+                    style="width:20px;margin-right:5px;display:block">
             </div>
 
             <div class="weui_cell_ft" id="myzan" style="border: none">
@@ -195,7 +209,9 @@
         </div>
         <div class="weui_cell" href="javascript:;" style="float: left">
             <div class="weui_cell_hd" style="display: inline">
-                <img src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"  style="width:20px;margin-right:5px;display:block">
+                <img
+                    src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
+                    style="width:20px;margin-right:5px;display:block">
             </div>
 
             <div style="display: inline">
@@ -203,6 +219,11 @@
             </div>
         </div>
     </div>
+
+
+    <?php
+    echo "Hello World!";
+    ?>
 
 </div>
 </body>
