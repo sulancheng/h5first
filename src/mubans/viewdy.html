@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>苏程的网站</title>
+    <script>
+
+            function play() {
+                var excle = $("#myfile").val();
+                if(excle == ""){
+                    alert("请选择视频");
+                    return false;
+                }
+//                if ($(".myfile").value==undefined){
+//                    alert("请选择视频")
+//                    return false;
+//                }
+                var file =$("#myfile")[0];
+                var noefile = file.files[0];
+                var url = URL.createObjectURL(noefile);
+                $(".myvideo").prop("src",url)
+//                $(".myvideo").css("scr",url);
+                $(".myvideo").play();
+            }
+
+    </script>
+</head>
+
+<body>
+<div style="text-align: center">
+    <video class="myvideo" controls autoplay width="100%" height="40%"></video><br>
+    选择你要看的电影。
+    <input id="myfile" type="file" />
+
+</div>
+<div onclick="play()" style="display: flex; align-items: center;justify-content: center;background: #ff00dd;height: 60px;margin-top: 60px">
+    播放
+</div>
+
+</body>
+</html>

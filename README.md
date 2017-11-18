@@ -356,6 +356,31 @@ $.ajax({
     }
 });
 
+关于jquery 设置属性 获取属性与一处属性。 prop  attr  css(style里面的属性用)
+对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。 例如action  data-action
+提示：如需检索 HTML 属性，请使用 attr() 方法代替。
+提示：如需移除属性，请使用 removeProp() 方法。css只能修改属性名为style的值，也就是style=""里面的值
+
+居中的方式L:    .content {
+                   width: 300px;
+                   height: 300px;
+                   background: orange;
+                   margin: 0 auto; /*水平居中*/
+                   position: relative;
+                   top: 50%; /*偏移*/
+                   transform: translateY(-50%);
+               }
+                 body {
+                           display: flex;
+                           align-items: center; /*定义body的元素垂直居中*/
+                           justify-content: center; /*定义body的里的元素水平居中*/
+                       }
+                       .content {
+                           width: 300px;
+                           height: 300px;
+                           background: orange;        
+                       }
 
 
 
