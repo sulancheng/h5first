@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
     <script>
         function showHint(str)
         {
@@ -29,13 +35,28 @@
             xmlhttp.open("GET","gethint.php?q="+str,true);
             xmlhttp.send();
         }
+        function jqueryget(str) {
+            $.ajax({
+                url: "gethint.php?q="+str,  //可以获取
+                type : "GET",
+                //contentType: "application/json; charset=utf-8",//(可以)
+                success: function (data, status) {
+                    //alert(JSON.stringify(data)); 对应的json.parse();
+                    $("#txtHint").html(data);
+                    //alert("数据: \n" + data + "\n状态: " + status);
+                },
+                error: function (data,xhr) {
+                    alert("错误提示： " + data.status + " " + xhr.statusText+"---xhr"+xhr.statusText);
+                },
+            });
+        }
     </script>
 </head>
 <body>
 
 <p><b>在输入框中输入一个姓名:</b></p>
 <form>
-    姓名: <input type="text" onkeyup="showHint(this.value)">
+    姓名: <input type="text" onkeyup="jqueryget(this.value)">
 </form>
 <p>返回值: <span id="txtHint"></span></p>
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <title>菜鸟教程(runoob.com)</title>
+    <script>
+        function getVote(int) {
+            if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari 执行代码
+                xmlhttp=new XMLHttpRequest();
+            } else {
+                // IE6, IE5 执行代码
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("poll").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+            xmlhttp.send();
+        }
+        function jqueryget(int) {
+            $.ajax({
+                url: "toupiao.php?vote="+int,  //可以获取
+                type : "GET",
+                //contentType: "application/json; charset=utf-8",//(可以)
+                success: function (data, status) {
+                    //alert(JSON.stringify(data)); 对应的json.parse();
+                    //alert("数据: \n" + data + "\n状态: " + status);
+                    $("#poll").html(data);
+                },
+                error: function (data,xhr) {
+                    alert("错误提示： " + data.status + " " + xhr.statusText+"---xhr"+xhr.statusText);
+                },
+            });
+        }
+    </script>
+</head>
+<body>
+
+<div id="poll">
+    <h3>你喜欢 PHP 和 AJAX 吗?</h3>
+    <form>
+        是:
+        <input type="radio" name="vote" value="0" onclick="jqueryget(this.value)">
+        <br>否:
+        <input type="radio" name="vote" value="1" onclick="jqueryget(this.value)">
+    </form>
+</div>
+
+</body>
+</html>

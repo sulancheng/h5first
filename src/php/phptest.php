@@ -12,6 +12,8 @@ echo "<br>";
 echo "<br>我要学 PHP!<br>";
 echo "我车的品牌是 $cars[0]<br>";
 echo var_dump($cars);
+
+
 ?>
 <!--常量-->
 <?php

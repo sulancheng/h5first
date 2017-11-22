@@ -43,24 +43,27 @@
             border-radius: 18px;
         }
 
-        .mybutton:visited {
-            color: #00FF00;
-
-        }
-
-        /* 已访问链接 */
+        /* .mybutton:visited {
+             //color: #00FF00;
+             //border-radius: 0px;
+         }
+ */
+         /* 已访问链接 */
         .riqi span {
             width: 200px;
             border-right: 1px solid #01a001;
             border-bottom: 3px solid #ff0000;
             border-left: 1px dashed #ffe09f;
             border-collapse: separate;
-            border-spacing: 10px 50px;
-            padding: 10px 20px 10px 10px;
+            padding: 10px 30px 10px 10px;
         }
 
         .listcard ul li:active {
             background-color: #0c7cb5;
+        }
+        .anbutton{
+            border-bottom: 3px solid #ff0000;
+            border-spacing: 10px 10px;
         }
     </style>
 
@@ -78,7 +81,7 @@
             });
             $(".mybuttonzu button").click(function () {
                 //$(this).attr("disabled","disabled");//不可点击
-                $(this).css("background-color", "#45ff44").siblings().css("background-color", "#e56c0c");//变绿色
+                $(this).css("background-color", "#45ff44").css("border-radius","0px").addClass("anbutton").siblings().css("background-color", "#e56c0c");//变绿色
                 // $(this).siblings().css("background-color","#e56c0c");
             });
             $(".riqi span").text(new Date());
@@ -219,11 +222,6 @@
             </div>
         </div>
     </div>
-
-
-    <?php
-    echo "Hello World!";
-    ?>
 
 </div>
 </body>
