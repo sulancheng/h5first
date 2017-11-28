@@ -38,10 +38,11 @@ if ($conn->connect_error) {
 echo "连接成功";
 $sql = "SELECT * from student WHERE NAME ='nishi'";
 $result = $conn->query($sql);
+echo json_encode($result);
 if ($result->num_rows > 0) {
     // 输出数据
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["class"]." -age=".$row["age"]. "<br>";
+        #echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["class"]." -age=".$row["age"]. "<br>";
     }
 } else {
     echo "0 结果";

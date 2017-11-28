@@ -1,6 +1,7 @@
 <?php
 // 允许上传的图片后缀
 $allowedExts = array("gif", "jpeg", "jpg", "png");
+$dizhi = "D:/githubworksp/h5gitworkspacetwo/src/";
 $temp = explode(".", $_FILES["file"]["name"]);
 echo $_FILES["file"]["size"];
 $extension = end($temp);     // 获取文件后缀名
@@ -10,7 +11,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/pjpeg")
 || ($_FILES["file"]["type"] == "image/x-png")
 || ($_FILES["file"]["type"] == "image/png"))
-&& ($_FILES["file"]["size"] < 204800)   // 小于 200 kb
+&& ($_FILES["file"]["size"] < 20480000)   // 小于 200 kb
 && in_array($extension, $allowedExts))
 {
 	if ($_FILES["file"]["error"] > 0)
@@ -40,8 +41,9 @@ if ((($_FILES["file"]["type"] == "image/gif")
 		else
 		{
 			// 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-			move_uploaded_file($_FILES["file"]["tmp_name"], "D:/githubworksp/h5gitworkspacetwo/src/php/upload/". $_FILES["file"]["name"]);
-			echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
+			move_uploaded_file($_FILES["file"]["tmp_name"], $dizhi."php/upload/". $_FILES["file"]["name"]);
+//			echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
+            echo "文件上传成功";
 		}
 	}
 }

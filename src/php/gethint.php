@@ -33,6 +33,7 @@ $a[]="Vicky";
 
 //从请求URL地址中获取 q 参数
 $q = htmlspecialchars($_REQUEST['q']);
+
 if($q ==""){
     //输出返回值
     echo "无数据";
