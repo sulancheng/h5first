@@ -82,6 +82,7 @@
                 slideshowSpeed: 3000,           // Integer: ms 滚动间隔时间
             });
             $("#zongconent").click(function () {
+                alert($(this).attr("data-action"))
 
 
             });
@@ -97,7 +98,7 @@
 </head>
 <body>
 
-<div id="zongconent" style="background-color: #eaeaea;height: 100%">
+<div id="zongconent" style="background-color: #eaeaea;height: 100%" data-action="nimei" >
     <!--轮播图开始-->
     <div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual" data-am-slider='{"directionNav":false}'
          style="bottom: 0;margin-bottom: 0px">

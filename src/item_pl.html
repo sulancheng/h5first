@@ -82,8 +82,14 @@
                 $("#contnetul").append(he);
                 //alert($("#myzan"+xnum).attr("data-action"));
                 $("#myzan" + i).click(function () {
+                    if(confirm("还有继续吗？")){
+                        alert("继续");
+                    }else{
+                        alert("再见");
+                    }
                     alert(this.id);
                     alert(this.getAttribute("data-action"))
+                    alert($(this).attr("data-action"))
                     //woshj(this.id,this.attr("data-action"));
                 })
             }

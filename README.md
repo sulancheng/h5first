@@ -382,5 +382,9 @@ $.ajax({
                            background: orange;        
                        }
 
+ $("#zongconent").click(function () {
+                alert($(this).attr("data-action"))
 
+this默认是元素js加了$就是jquery
+            });
 
