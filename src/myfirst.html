@@ -43,7 +43,8 @@
     <script src="assets/js/amazeui.min.js"></script>
     <script src="js/public.js"></script>
     <script>
-        $(document).ready(function () {//当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 事件。
+        //$(document).ready(function () {//当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 事件。
+        $(function(){
             $("#mybutton").click(function () {
 //                $.post("http://127.0.0.1:8080/market/register",//可以获取
 //                    {
@@ -67,6 +68,7 @@
 //
 //                        });
 //                    });
+                alert("请求开始");
                 var myjson = {password: "123456", username:"sulc"};
                 alert(getpath(false)),
                 $.ajax({
