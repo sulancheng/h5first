@@ -441,3 +441,24 @@ this默认是元素js加了$就是jquery
 </div> 
 </body> 
 </html> 
+
+
+
+6.关于监听滑动事件
+<script type="text/javascript">
+ $(window).scroll(function () {
+      //已经滚动到上面的页面高度
+     var scrollTop = $(this).scrollTop();
+      //页面高度
+     var scrollHeight = $(document).height();
+       //浏览器窗口高度
+     var windowHeight = $(this).height();
+      //此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+      if (scrollTop + windowHeight == scrollHeight) {
+        alert('页面到底部了');
+       }
+        if (scrollHeight-(scrollTop + windowHeight )<30) {
+               alert('页面到底部了');
+              }
+ });
+</script>
