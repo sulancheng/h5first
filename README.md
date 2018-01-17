@@ -388,3 +388,56 @@ $.ajax({
 this默认是元素js加了$就是jquery
             });
 
+5.关于多个div重叠 相对布局的内容 
+
+整个demo地址：http://www.divcss5.com/shili/s587.shtml
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>div重叠 叠加实例 未排层叠顺序 www.divcss5.com</title> 
+<style> 
+.div-relative{position:relative; color:#000; border:1px solid #000; width:500px; height:400px} 
+.div-a{ position:absolute; left:30px; top:30px; background:#F00; width:200px; height:100px} 
+/* css注释说明： 背景为红色 */ 
+.div-b{ position:absolute; left:50px; top:60px; background:#FF0; width:400px; height:200px} 
+/* 背景为黄色 */ 
+.div-c{ position:absolute; left:80px; top:80px; background:#00F; width:300px; height:300px} 
+/* DIV背景颜色为蓝色 */ 
+</style> 
+</head> 
+<body> 
+<div class="div-relative"> 
+<div class="div-a">我背景为红色</div> 
+<div class="div-b">我背景为黄色</div> 
+<div class="div-c">我背景为蓝色</div> 
+</div> 
+</body> 
+</html> 
+实例说明：
+我们使用position实现绝对定位，对父级设置position:relative属性，对其子级设置position:absolute加上left或right和top或bottom实现子级在父级内任意定位。
+在原始情况下重叠是按DIV代码本身顺序排列，越后输入的DIV盒子其越靠前（浮在上面）。除了改变源代码本身div代码在html顺序，我们还可以使用css z-index实现DIV层排列顺序。
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>div重叠 叠加实例 排层叠顺序 www.divcss5.com</title> 
+<style> 
+.div-relative{position:relative;color:#000;border:1px solid #000;width:500px;height:400px} 
+.div-a{ position:absolute;left:30px;top:30px;z-index:100;background:#F00;width:200px;height:100px} 
+/* div背景色为红色 */ 
+.div-b{ position:absolute;left:50px;top:60px;z-index:80;background:#FF0;width:400px;height:200px} 
+/* 背景为黄色 */ 
+.div-c{ position:absolute;left:80px;top:80px;z-index:70;background:#00F;width:300px;height:300px} 
+/* 背景为蓝色 */ 
+</style> 
+</head> 
+<body> 
+<div class="div-relative"> 
+<div class="div-a">我背景为红色</div> 
+<div class="div-b">我背景为黄色</div> 
+<div class="div-c">我背景为蓝色</div> 
+</div> 
+</body> 
+</html> 
