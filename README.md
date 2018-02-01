@@ -373,7 +373,7 @@ $.ajax({
                }
                  body {
                            display: flex;
-                           align-items: center; /*定义body的元素垂直居中*/
+                           align-items: center; /*定义body的元素垂直居中多个孩子用align-content */
                            justify-content: center; /*定义body的里的元素水平居中*/
                        }
                        .content {
@@ -381,6 +381,10 @@ $.ajax({
                            height: 300px;
                            background: orange;        
                        }
+
+ display: flex;
+    flex-direction:column;纵向
+    flex-direction:row;横向
 
  $("#zongconent").click(function () {
                 alert($(this).attr("data-action"))

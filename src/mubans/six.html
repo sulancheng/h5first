@@ -273,31 +273,83 @@
             <span>你还是旧的吧51</span>
         </div>
     </div>
-    <div style="width: 100%;height: 100px;background: #F37B1D;display: block;margin-top: 10px;display: flex;align-items: center;justify-content: center">
+    <div style="width: 100%;height: 100px;background: #F37B1D;margin-top: 10px;display: flex;align-items: center;justify-content: center">
         <div>
             <div>就是新的6</div>
             <div>你还是旧的吧6</div>
         </div>
     </div>
-    <div style="width: 100%;height: 100px;background: #F37B1D;display: block;margin-top: 10px;display: flex;align-items: center;justify-content: center">
+    <div style="width: 100%;height: 100px;background: #F37B1D;margin-top: 10px;display: flex;align-items: center;justify-content: center">
         <div>
             <span>就是新的7</span>
             <span style="margin-left: 20px">你还是旧的吧7</span>
         </div>
     </div>
     <!--关于横向居中与竖直居中end-->
+
+    <!--ulstart-->
+    <style type="text/css">
+        .head-nav{
+            width:100%;
+            display:block;
+            position: relative;
+            height: 100px;
+        }
+        .head-nav ul{
+            list-style:none;
+        }
+        .head-nav ul li{
+            float:left;
+        }
+    </style>
+    <div style="display: flex;flex-direction: column" >
+        <div class="head-nav">
+            <ul>
+                <li>
+                    nishishui
+                </li>
+                <li>
+                    nishishui
+                </li>
+                <li>
+                    nishishui
+                </li>
+            </ul>
+
+        </div>
+        <div style="width: 100%;background: #F37B1D;display: block;margin-top: 10px">
+            ${one}
+        </div>
+        <!--使用css3 实现横向 与纵向排列-->
+        <div style="display: flex;align-items: center;flex-direction:row;height: 58px">
+            <div style="margin-left: 10px;position: absolute">
+                你好啦1。。。。
+            </div>
+            <div style="right: 10px;position: absolute">
+                你好啦1。。。。
+            </div>
+        </div>
+        <!--使用css3 实现权重-->
+        <div style="display: flex;align-items: center;flex-direction:row;height: 58px">
+            <div style="flex-grow: 3;background-color: #0c7cb5">
+                你好啦2。。。。
+            </div>
+            <div style="flex-grow: 1;background-color: #ff8951">
+                你好啦2。。。。
+            </div>
+        </div>
+        <!--使用css3 实现权重-->
+        <div style="display: flex;align-items: center;flex-direction:column;height: 160px">
+            <div style="flex-grow: 3;background-color: #0c7cb5;width: 100%;display: flex;align-items: center;justify-content: center">
+                你好啦3。。。。
+            </div>
+            <div style="flex-grow: 1;background-color: #ff8951;width: 100%">
+                你好啦3。。。。
+            </div>
+        </div>
+    </div>
+
 </div>
-<!--ulstart-->
-<div class="head-nav" style="float: left">
-    <ul>
-        nishishui
-    </ul>
-    <ul>
-        nishishui
-    </ul>
-    <ul>
-        nishishui
-    </ul>
-</div>
+
 </body>
 </html>
