@@ -466,3 +466,5 @@ this默认是元素js加了$就是jquery
               }
  });
 </script>
+7. box-sizing:border-box向内扩张在设置padding时候
+box-sizing:conent-box 向外扩张 改变大小
