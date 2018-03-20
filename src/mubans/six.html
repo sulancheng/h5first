@@ -83,11 +83,15 @@
                 reverse: true,                 // Boolean: 翻转 slide 运动方向
                 slideshowSpeed: 3000,           // Integer: ms 滚动间隔时间
             });
-            $("#zongconent").click(function () {
-                alert($(this).attr("data-action"))
-
-
-            });
+//            $("#zongconent").click(function () {
+//                alert($(this).attr("data-action"))
+//
+//
+//            });
+            $(".listcard ul li").click(function () {
+                $(this).css("background-color","yellow");
+                alert($(this).prop("id"))
+            })
             $(".mybuttonzu button").click(function () {
                 //$(this).attr("disabled","disabled");//不可点击
                 //$(this).prop("disabled","disabled");//不可点击都有用
@@ -128,7 +132,7 @@
     <div class="listcard">
         <!--列表st-->
         <ul style="list-style: none">
-            <li class="carddiv" id="ullicon" honclick="window.open('http://www.cnblogs.com')">
+            <li class="carddiv" id="ullicon" onclick="window.open('http://www.cnblogs.com')">
                 <a class="media-left">
                     <img class="media-object"
                          src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
@@ -145,7 +149,7 @@
 
                 </div>
             </li>
-            <li class="carddiv">
+            <li class="carddiv"  id="2">
                 <a class="media-left" href="#">
                     <img class="media-object"
                          src="http://www.17sucai.com/preview/79936/2016-12-05/wap%E5%BE%AE%E5%BA%97%E6%95%B4%E7%AB%991/images/temp/pic.jpg"
@@ -331,7 +335,7 @@
     <!--css3布局-->
     <div style="display: flex;flex-direction: column">
         <div class="head-nav">
-            <ul>
+            <ul style="display: flex;flex-direction: column;height: 30px;line-height: 30px;text-align: center">
                 <li>
                     nishishui
                 </li>
